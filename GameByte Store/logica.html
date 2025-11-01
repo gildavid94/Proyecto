@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica del Sistema | GameByte Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="images/Logo 1.png" alt="Logo GameByte Store" class="logo">
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="crud.html">Formulario</a></li>
+                    <li><a href="basededatos.html">Modelo BD</a></li>
+                    <li><a href="logica.html" class="active">Lógica</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="integrantes.html">Equipo</a></li>
+                </ul>
+            </nav>
+
+            <!-- Enlaces de sesión -->
+        <div class="user-links">
+            <a href="#">Iniciar sesión</a>
+            <a href="formulario.html" class="registro">Registrarse</a>
+        </div>
+            <div class="carrito">
+            🛒
+        </div>
+        </div>
+
+            <div class="carrito">🛒</div>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner-catalogo">
+        <h1>Lógica del Sistema</h1>
+        <p>Proceso general del funcionamiento de GameByte Store</p>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="logic-container">
+
+        <h2>Ventas Realizadas</h2>
+
+        <div class="logic-text">
+            <p> Este código permite ingresar la cantidad de ventas realizadas en un día, registrar sus valores y mostrar un resumen con:</p>
+        </div>
+
+        <!-- DIAGRAMA SIMPLE -->
+        <div class="logic-diagram">
+
+           <h3>Descripción del Programa</h3>
+           <br>
+    <p>
+     
+      <ul>
+        <li>Total de ventas realizadas</li>
+        <li>Promedio general</li>
+        <li>Venta más alta y más baja</li>
+        <li>Ventas que superan el promedio</li>
+      </ul>
+      El programa utiliza estructuras de control, arreglos y ciclos para procesar los datos.
+    </p>
+    <br>
+
+    <h3>Código Java</h3>
+    <br>
+
+    <pre class="java">
+        import java.util.Scanner;
+
+        public class GameByte {
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+
+                System.out.print("¿Cuántas ventas se realizaron hoy? ");
+                int cantidadVentas = sc.nextInt();
+
+                if (cantidadVentas == 0) {
+                    System.out.println("No se realizaron ventas hoy ");
+                    return;
+                }
+
+                double[] ventas = new double[cantidadVentas];
+
+                for (int i = 0; i < cantidadVentas; i++) {
+                    System.out.print("Ingrese el valor de la venta #" + (i + 1) + ": ");
+                    ventas[i] = sc.nextDouble();
+                }
+
+                double total = 0;
+                double maxVenta = ventas[0];
+                double minVenta = ventas[0];
+
+                for (double venta : ventas) {
+                    total += venta;
+                    if (venta > maxVenta) {
+                        maxVenta = venta;
+                    }
+                    if (venta < minVenta) {
+                        minVenta = venta;
+                    }
+                }
+
+                double promedio = total / cantidadVentas;
+
+                System.out.println("\n=== Resumen del Día ===");
+                System.out.println(" Total de Ventas: $" + total);
+                System.out.println(" Promedio de Ventas: $" + promedio);
+                System.out.println(" Venta más Alta: $" + maxVenta);
+                System.out.println(" Venta más Baja: $" + minVenta);
+
+                System.out.println("\n Ventas mayores al promedio:");
+                boolean hayMayores = false;
+                for (double venta : ventas) {
+                    if (venta > promedio) {
+                        System.out.println("- $" + venta);
+                        hayMayores = true;
+                    }
+                }
+
+                if (!hayMayores) {
+                    System.out.println("Ninguna venta superó el promedio.");
+                }
+            }
+        }
+    </pre>
+
+        </div>
+
+        <div class="logic-text">
+            <p>Este proceso asegura que toda la información fluya correctamente, desde el usuario hasta la base de datos y el sistema pueda procesar las compras de forma ordenada.</p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© 2025 GameByte Store - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
