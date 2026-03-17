@@ -1,145 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GameByte Store - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameByte Store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- HEADER -->
     <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/Logo 1.png" alt="Logo GameByte Store" class="logo">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="formulario.html">Formulario</a></li>
-                    <li><a href="basededatos.html">Modelo BD</a></li>
-                    <li><a href="logica.html">Lógica</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="integrantes.html">Equipo</a></li>
-                </ul>
-            </nav>
+      <div class="header-inner">
+        <a href="index.html" class="logo-link">
+          <img src="images/LogoColor.png" alt="Logo GameByte" class="logo" />
+        </a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="playstation.html">PlayStation</a></li>
+            <li><a href="xbox.html">Xbox</a></li>
+            <li><a href="nintendo.html">Nintendo</a></li>
+            <li><a href="pc.html">PC</a></li>
+            <li><a href="accesorios.html">Accesorios</a></li>
+          </ul>
+        </nav>
 
-             <!-- Enlaces de sesión -->
+        <!-- Enlaces de sesión -->
         <div class="user-links">
-            <a href="#">Iniciar sesión</a>
-            <a href="formulario.html" class="registro">Registrarse</a>
+          <a href="#">Iniciar sesión</a>
+          <a href="formulario.html" class="registro">Registrarse</a>
         </div>
-            <div class="carrito">
-            🛒
-        </div>
-        </div>
+        <div class="carrito">🛒</div>
+      </div>
     </header>
 
     <!-- BANNER PRINCIPAL -->
     <section class="banner">
-        <img src="images/Banners/banner1.jpg" alt="Banner principal GameByte Store" class="banner-img">
-        <div class="banner-text">
-            <h1>GameByte Store</h1>
-            <p class="slogan">Tu mundo gamer en un solo lugar</p>
-            <a href="productos.html" class="cta">Ver productos</a>
-        </div>
+      <img
+        src="images/Banners/banner1.jpg"
+        alt="Banner principal GameByte Store"
+        class="banner-img"
+      />
+      <div class="banner-text">
+        <h1>GameByte Store</h1>
+        <p class="slogan">Tu mundo gamer en un solo lugar</p>
+        <a href="productos.html" class="cta">Ver productos</a>
+      </div>
     </section>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
+      <!-- PRODUCTOS DESTACADOS (CARRUSEL) -->
+      <section class="destacados">
+        <h2>Descuentos del Mes</h2>
+        <div class="carousel-container">
+          <button class="prev-prod" aria-label="Anterior">&#10094;</button>
+          <div class="carousel-track">
+            <img
+              src="images/Carrusel 1/img1_carrusel1.avif"
+              alt="MarioGalaxy"
+            />
+            <img
+              src="images/Productos/Consolas/6.Nintendo Switch Lite.jpg"
+              alt="Nintendo"
+            />
+            <img
+              src="images/Productos/Sillas Gamer/51.Silla Gamer Reclinable Roja.jpg"
+              alt="Ninja"
+            />
+            <img src="images/Productos/Consolas/9.Xbox One X.jpg" alt="Xbox" />
+            <img
+              src="images/Productos/Componentes de PC/61.Adaptador M.2 NVMe a PCIe.jpg"
+              alt="Adaptador"
+            />
+          </div>
+          <button class="next-prod" aria-label="Siguiente">&#10095;</button>
+        </div>
+      </section>
 
-        <!-- PRODUCTOS DESTACADOS (CARRUSEL) -->
-        <section class="destacados">
-            <h2>Descuentos del Mes</h2>
-            <div class="carousel-container">
-                <button class="prev-prod" aria-label="Anterior">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="images/Carrusel 1/img1_carrusel1.avif" alt="MarioGalaxy">
-                    <img src="images/Productos/Consolas/6.Nintendo Switch Lite.jpg" alt="Nintendo">
-                    <img src="images/Productos/Sillas Gamer/51.Silla Gamer Reclinable Roja.jpg" alt="Ninja">
-                    <img src="images/Productos/Consolas/9.Xbox One X.jpg" alt="Xbox">
-                    <img src="images/Productos/Componentes de PC/61.Adaptador M.2 NVMe a PCIe.jpg" alt="Adaptador">
-                </div>
-                <button class="next-prod" aria-label="Siguiente">&#10095;</button>
-            </div>
-        </section>
+      <!-- SOBRE LA TIENDA -->
+      <section class="sobre">
+        <h2>Sobre GameByte Store</h2>
 
-        <!-- SOBRE LA TIENDA -->
-        <section class="sobre">
-            <h2>Sobre GameByte Store</h2>
+        <br />
 
-            <br>
+        <h2>🕹️ Historia</h2>
 
-            <h2>🕹️ Historia</h2>
+        <p>
+          GameByte Store nació con la idea de reunir en un solo lugar todo lo
+          que un gamer necesita: consolas, videojuegos, accesorios y contenido
+          digital. Desde sus inicios, la tienda se ha enfocado en ofrecer una
+          experiencia moderna, confiable y pensada para jugadores de todo tipo,
+          desde los casuales hasta los coleccionistas más exigentes.
+        </p>
 
-            <p>GameByte Store nació con la idea de reunir en un solo lugar todo lo que un gamer necesita: consolas, videojuegos, accesorios y contenido digital. Desde sus inicios, la tienda se ha enfocado en ofrecer una experiencia moderna, confiable y pensada para jugadores de todo tipo, desde los casuales hasta los coleccionistas más exigentes. 
-            </p>
+        <br />
 
-            <br>
+        <h2>🎯 Misión</h2>
 
-            <h2>🎯 Misión</h2>
+        <p>
+          Brindar a nuestros clientes una experiencia de compra completa y
+          segura, ofreciendo productos de calidad, precios competitivos y
+          atención personalizada, en una plataforma intuitiva y confiable que
+          celebra la pasión por los videojuegos.
+        </p>
 
-            <p>Brindar a nuestros clientes una experiencia de compra completa y segura, ofreciendo productos de calidad, precios competitivos y atención personalizada, en una plataforma intuitiva y confiable que celebra la pasión por los videojuegos.
-            </p>
+        <br />
 
-            <br>
+        <h2>🌟 Visión</h2>
 
-            <h2>🌟 Visión</h2>
-
-            <p>Ser la tienda líder en el mundo gamer, reconocida por su innovación, servicio al cliente y compromiso con la comunidad, convirtiéndose en el referente principal para los amantes de los videojuegos y la tecnología.
-            </p>        
-                            
-        </section>
+        <p>
+          Ser la tienda líder en el mundo gamer, reconocida por su innovación,
+          servicio al cliente y compromiso con la comunidad, convirtiéndose en
+          el referente principal para los amantes de los videojuegos y la
+          tecnología.
+        </p>
+      </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>Email: contacto@gamebyte.store</p>
-                <p>Tel: +57 300 000 0000</p>
-            </div>
-            <div class="social">
-                <h4>Síguenos</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com" target="_blank">
-                        <img src="images/Logos Redes/facebook (1).png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                    <li><a href="https://www.instagram.com" target="_blank">
-                        <img src="images/Logos Redes/instagram.png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                    <li><a href="https://www.x.com" target="_blank">
-                        <img src="images/Logos Redes/twitter.png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 GameByte Store</p>
-            </div>
+      <div class="footer-inner">
+        <div class="contact-info">
+          <h4>Contacto</h4>
+          <p>Email: contacto@gamebyte.store</p>
+          <p>Tel: +57 300 000 0000</p>
         </div>
+        <div class="social">
+          <h4>Síguenos</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com" target="_blank">
+                <img
+                  src="images/Logos Redes/facebook (1).png"
+                  alt="logo"
+                  width="32px"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank">
+                <img
+                  src="images/Logos Redes/instagram.png"
+                  alt="logo"
+                  width="32px"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.x.com" target="_blank">
+                <img
+                  src="images/Logos Redes/twitter.png"
+                  alt="logo"
+                  width="32px"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 GameByte Store</p>
+        </div>
+      </div>
     </footer>
 
     <!-- SCRIPT DEL CARRUSEL -->
     <script>
-        const track = document.querySelector('.carousel-track');
-        const prodImages = document.querySelectorAll('.carousel-track img');
-        let index = 0;
+      const track = document.querySelector(".carousel-track");
+      const prodImages = document.querySelectorAll(".carousel-track img");
+      let index = 0;
 
-        document.querySelector('.next-prod').addEventListener('click', () => {
-            index = (index + 1) % prodImages.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
+      document.querySelector(".next-prod").addEventListener("click", () => {
+        index = (index + 1) % prodImages.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      });
 
-        document.querySelector('.prev-prod').addEventListener('click', () => {
-            index = (index - 1 + prodImages.length) % prodImages.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
+      document.querySelector(".prev-prod").addEventListener("click", () => {
+        index = (index - 1 + prodImages.length) % prodImages.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      });
     </script>
-</body>
+  </body>
 </html>
-
