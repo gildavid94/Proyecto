@@ -1,9 +1,92 @@
-.logo {
-  width: 150px;        /* Ancho del logo */
-  height: auto;        /* Alto proporcional automático */
-  display: block;
-  margin: 0 auto;      /* Centra horizontalmente */
+/* ===== ÍCONOS DEL NAV ===== */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
+
+/* Ícono individual */
+.nav-icon {
+  position: relative;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-icon:hover {
+  color: #f4f4f5;
+}
+
+/* Badge del carrito */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #fbfbfb;
+  color: #ffffff;
+  font-size: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f0f0f;
+  padding: 15px 40px;
+
+  /* Agrega estas líneas */
+  width: 100%;
+  box-sizing: border-box;
+
+/* Logo */
+.logo img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* Lista de links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Botones individuales */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover - efecto al pasar el mouse */
+.nav-links a:hover {
+  background-color: #f9f9fa;
+  color: #ffffff;
+}
+
+.logo {
+  width: 140px;
+  aspect-ratio: auto 300 / 139;
+  height: 139px;  /* Centra horizontalme
 
 /* Títulos principales */
 h1, h2, h3 {
@@ -15,77 +98,96 @@ body {
   font-family: 'Exo 2', sans-serif;
 }
 
-/* ===========================
-   1. VARIABLES GLOBALES
-=========================== */
-:root {
-  --color-primario: #3498db;
-  --color-fondo: #f5f5f5;
-  --fuente-principal: 'Arial', sans-serif;
+/* ===== SECCIÓN DE JUEGOS ===== */
+.games-section {
+  padding: 60px 80px;
+  background-color: #111111;
 }
 
-/* ===========================
-   2. RESET / BASE
-   Elimina estilos por defecto del navegador
-=========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-left: 4px solid #1e90ff;
+  padding-left: 16px;
 }
 
-/* ===========================
-   3. ESTILOS GENERALES
-=========================== */
-body {
-  background-color: white;
-  font-family: var(--fuente-principal);
-  color: #333;
+/* ===== CONTENEDOR DE TARJETAS ===== */
+.games-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* ===========================
-   4. COMPONENTES
-=========================== */
+/* ===== TARJETA INDIVIDUAL ===== */
+.game-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #222;
+}
 
-/* Botones */
-.boton {
-  background-color: var(--color-primario);
-  color: white;
-  padding: 10px 20px;
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(30, 144, 255, 0.25);
+}
+
+/* Imagen del juego */
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contenido inferior de la tarjeta */
+.game-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Título del juego */
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Consola */
+.game-console {
+  font-family: 'Exo 2', sans-serif;
+  color: #1e90ff;
+  font-size: 13px;
+}
+
+/* Botón comprar */
+.btn-buy {
+  background-color: #1e90ff;
+  color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1px;
 }
 
-.boton:hover {
-  background-color: #2980b9;  /* Efecto al pasar el mouse */
+.btn-buy:hover {
+  background-color: #0070cc;
+  transform: scale(1.03);
 }
 
-/* Tarjetas */
-.tarjeta {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
-/* ===========================
-   5. LAYOUT / ESTRUCTURA
-=========================== */
-.contenedor {
-  max-width: 1200px;
-  margin: 0 auto;        /* Centra horizontalmente */
-  padding: 0 16px;
-}
 
-/* ===========================
-   6. RESPONSIVE (móviles)
-=========================== */
-@media (max-width: 768px) {
-  .contenedor {
-    padding: 0 8px;
-  }
-
-  .boton {
-    width: 100%;          /* Botón ocupa todo el ancho en móvil */
-  }
-}

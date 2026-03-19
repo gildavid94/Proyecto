@@ -5,181 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GameByte Store</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <body style="background-color: white"></body>
     <!-- HEADER -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="logo-link">
-          <img src="images/LogoColor.png" alt="Logo GameByte" class="logo" />
-        </a>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="playstation.html">PlayStation</a></li>
-            <li><a href="xbox.html">Xbox</a></li>
-            <li><a href="nintendo.html">Nintendo</a></li>
-            <li><a href="pc.html">PC</a></li>
-            <li><a href="accesorios.html">Accesorios</a></li>
-          </ul>
-        </nav>
-
-        <!-- Enlaces de sesión -->
-        <div class="user-links">
-          <a href="#">Iniciar sesión</a>
-          <a href="formulario.html" class="registro">Registrarse</a>
-        </div>
-        <div class="carrito">🛒</div>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/LogoColor.png" alt="Logo" />
       </div>
-    </header>
+      <ul class="nav-links">
+        <li><a href="#">PlayStation</a></li>
+        <li><a href="#">Xbox</a></li>
+        <li><a href="#">Nintendo</a></li>
+        <li><a href="#">Accesorios</a></li>
+      </ul>
+    </nav>
 
-    <!-- BANNER PRINCIPAL -->
-    <section class="banner">
-      <img
-        src="images/Banners/banner1.jpg"
-        alt="Banner principal GameByte Store"
-        class="banner-img"
-      />
-      <div class="banner-text">
-        <h1>GameByte Store</h1>
-        <p class="slogan">Tu mundo gamer en un solo lugar</p>
-        <a href="productos.html" class="cta">Ver productos</a>
-      </div>
-    </section>
+    <!-- Sección de juegos destacados -->
+    <div class="games-section">
+      <h2 class="section-title">Juegos Destacados</h2>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-      <!-- PRODUCTOS DESTACADOS (CARRUSEL) -->
-      <section class="destacados">
-        <h2>Descuentos del Mes</h2>
-        <div class="carousel-container">
-          <button class="prev-prod" aria-label="Anterior">&#10094;</button>
-          <div class="carousel-track">
-            <img
-              src="images/Carrusel 1/img1_carrusel1.avif"
-              alt="MarioGalaxy"
-            />
-            <img
-              src="images/Productos/Consolas/6.Nintendo Switch Lite.jpg"
-              alt="Nintendo"
-            />
-            <img
-              src="images/Productos/Sillas Gamer/51.Silla Gamer Reclinable Roja.jpg"
-              alt="Ninja"
-            />
-            <img src="images/Productos/Consolas/9.Xbox One X.jpg" alt="Xbox" />
-            <img
-              src="images/Productos/Componentes de PC/61.Adaptador M.2 NVMe a PCIe.jpg"
-              alt="Adaptador"
-            />
+      <div class="games-container">
+        <!-- Tarjeta 1 -->
+        <div class="game-card">
+          <img src="images/GameDestacados/God.webp" alt="God of War" />
+          <div class="game-info">
+            <h3 class="game-title">God of War Ragnarök</h3>
+            <span class="game-console">
+              <i class="fas fa-gamepad"></i> PlayStation 5
+            </span>
+            <button class="btn-buy">
+              <i class="fas fa-cart-shopping"></i> Comprar
+            </button>
           </div>
-          <button class="next-prod" aria-label="Siguiente">&#10095;</button>
         </div>
-      </section>
 
-      <!-- SOBRE LA TIENDA -->
-      <section class="sobre">
-        <h2>Sobre GameByte Store</h2>
-
-        <br />
-
-        <h2>🕹️ Historia</h2>
-
-        <p>
-          GameByte Store nació con la idea de reunir en un solo lugar todo lo
-          que un gamer necesita: consolas, videojuegos, accesorios y contenido
-          digital. Desde sus inicios, la tienda se ha enfocado en ofrecer una
-          experiencia moderna, confiable y pensada para jugadores de todo tipo,
-          desde los casuales hasta los coleccionistas más exigentes.
-        </p>
-
-        <br />
-
-        <h2>🎯 Misión</h2>
-
-        <p>
-          Brindar a nuestros clientes una experiencia de compra completa y
-          segura, ofreciendo productos de calidad, precios competitivos y
-          atención personalizada, en una plataforma intuitiva y confiable que
-          celebra la pasión por los videojuegos.
-        </p>
-
-        <br />
-
-        <h2>🌟 Visión</h2>
-
-        <p>
-          Ser la tienda líder en el mundo gamer, reconocida por su innovación,
-          servicio al cliente y compromiso con la comunidad, convirtiéndose en
-          el referente principal para los amantes de los videojuegos y la
-          tecnología.
-        </p>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="contact-info">
-          <h4>Contacto</h4>
-          <p>Email: contacto@gamebyte.store</p>
-          <p>Tel: +57 300 000 0000</p>
+        <!-- Tarjeta 2 -->
+        <div class="game-card">
+          <img src="images/GameDestacados/Halo.webp" alt="Halo Infinite" />
+          <div class="game-info">
+            <h3 class="game-title">Halo Infinite</h3>
+            <span class="game-console">
+              <i class="fas fa-gamepad"></i> Xbox Series X
+            </span>
+            <button class="btn-buy">
+              <i class="fas fa-cart-shopping"></i> Comprar
+            </button>
+          </div>
         </div>
-        <div class="social">
-          <h4>Síguenos</h4>
-          <ul>
-            <li>
-              <a href="https://www.facebook.com" target="_blank">
-                <img
-                  src="images/Logos Redes/facebook (1).png"
-                  alt="logo"
-                  width="32px"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com" target="_blank">
-                <img
-                  src="images/Logos Redes/instagram.png"
-                  alt="logo"
-                  width="32px"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.x.com" target="_blank">
-                <img
-                  src="images/Logos Redes/twitter.png"
-                  alt="logo"
-                  width="32px"
-                />
-              </a>
-            </li>
-          </ul>
+
+        <!-- Tarjeta 3 -->
+        <div class="game-card">
+          <img src="images/GameDestacados/Zelda.webp" alt="Zelda" />
+          <div class="game-info">
+            <h3 class="game-title">Zelda: Tears of the Kingdom</h3>
+            <span class="game-console">
+              <i class="fas fa-gamepad"></i> Nintendo Switch
+            </span>
+            <button class="btn-buy">
+              <i class="fas fa-cart-shopping"></i> Comprar
+            </button>
+          </div>
         </div>
-        <div class="copyright">
-          <p>&copy; 2025 GameByte Store</p>
+
+        <!-- Tarjeta 4 -->
+        <div class="game-card">
+          <img src="images/GameDestacados/Spider.webp" alt="Spider-Man" />
+          <div class="game-info">
+            <h3 class="game-title">Spider-Man 2</h3>
+            <span class="game-console">
+              <i class="fas fa-gamepad"></i> PlayStation 5
+            </span>
+            <button class="btn-buy">
+              <i class="fas fa-cart-shopping"></i> Comprar
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
-
-    <!-- SCRIPT DEL CARRUSEL -->
-    <script>
-      const track = document.querySelector(".carousel-track");
-      const prodImages = document.querySelectorAll(".carousel-track img");
-      let index = 0;
-
-      document.querySelector(".next-prod").addEventListener("click", () => {
-        index = (index + 1) % prodImages.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      });
-
-      document.querySelector(".prev-prod").addEventListener("click", () => {
-        index = (index - 1 + prodImages.length) % prodImages.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      });
-    </script>
+    </div>
   </body>
 </html>
