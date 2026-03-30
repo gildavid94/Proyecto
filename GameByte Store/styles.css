@@ -1,193 +1,417 @@
-/* ===== ÍCONOS DEL NAV ===== */
-.nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+/* ══════════════════════════════════════════
+   GAMEBYTE STORE — styles.css
+   ══════════════════════════════════════════ */
 
-/* Ícono individual */
-.nav-icon {
-  position: relative;
-  color: #ffffff;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-icon:hover {
-  color: #f4f4f5;
-}
-
-/* Badge del carrito */
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background-color: #fbfbfb;
-  color: #ffffff;
-  font-size: 10px;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 600;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== NAVBAR ===== */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #0f0f0f;
-  padding: 15px 40px;
-
-  /* Agrega estas líneas */
-  width: 100%;
+/* ── RESET & BASE ── */
+*, *::before, *::after {
   box-sizing: border-box;
-
-/* Logo */
-.logo img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: top;
-}
-
-/* Lista de links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
-/* Botones individuales */
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+:root {
+  --accent: #00e5ff;
+  --accent-dim: #00b8cc;
+  --bg-page: #0a0a0f;
+  --bg-card: #111118;
+  --bg-card-hover: #16161f;
+  --border: #1f1f2e;
+  --border-hover: #2e2e42;
+  --text-primary: #ffffff;
+  --text-secondary: #8888a8;
+  --text-muted: #555570;
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
-/* Hover - efecto al pasar el mouse */
-.nav-links a:hover {
-  background-color: #f9f9fa;
-  color: #ffffff;
+html {
+  scroll-behavior: smooth;
 }
 
-.logo {
-  width: 140px;
-  aspect-ratio: auto 300 / 139;
-  height: 139px;  /* Centra horizontalme
-
-/* Títulos principales */
-h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Texto general del cuerpo */
 body {
-  font-family: 'Exo 2', sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* ===== SECCIÓN DE JUEGOS ===== */
-.games-section {
-  padding: 60px 80px;
-  background-color: #111111;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.section-title {
-  font-family: 'Orbitron', sans-serif;
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 40px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-left: 4px solid #1e90ff;
-  padding-left: 16px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ===== CONTENEDOR DE TARJETAS ===== */
-.games-container {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/* ══════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════ */
 
-/* ===== TARJETA INDIVIDUAL ===== */
-.game-card {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  width: 260px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #222;
-}
-
-.game-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(30, 144, 255, 0.25);
-}
-
-/* Imagen del juego */
-.game-card img {
+.header {
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
-/* Contenido inferior de la tarjeta */
-.game-info {
-  padding: 16px;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 7px 13px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-btn:hover {
+  color: var(--text-primary);
+  background: #1a1a2a;
+}
+
+.nav-btn.active {
+  color: var(--accent);
+}
+
+/* Acciones del header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-login {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bbb;
+  border: 1px solid #2a2a3a;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-login:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #2a2a3a;
+  border-radius: var(--radius-sm);
+  color: #bbb;
+  font-size: 15px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-cart:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: var(--accent);
+  color: #000;
+  font-size: 9px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════
+   CARRUSEL
+   ══════════════════════════════════════════ */
+
+.carousel-section {
+  padding: 2.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.game-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide-inner {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  background: var(--bg-card);
 }
 
-/* Título del juego */
-.game-title {
-  font-family: 'Orbitron', sans-serif;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0.5px;
+/* Imagen del slide */
+.slide-image-wrap {
+  position: relative;
+  height: 340px;
+  background: #05050f;
+  overflow: hidden;
 }
 
-/* Consola */
-.game-console {
-  font-family: 'Exo 2', sans-serif;
-  color: #1e90ff;
-  font-size: 13px;
-}
-
-/* Botón comprar */
-.btn-buy {
-  background-color: #1e90ff;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 0;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+.slide-image-wrap img {
   width: 100%;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  letter-spacing: 1px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  transition: transform 0.6s ease, opacity 0.3s ease;
 }
 
-.btn-buy:hover {
-  background-color: #0070cc;
+.slide-image-wrap:hover img {
   transform: scale(1.03);
+  opacity: 1;
 }
 
+.console-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #ccc;
+  text-transform: uppercase;
+}
 
+/* Cuerpo del slide */
+.slide-body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+}
 
+.slide-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.slide-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.slide-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.btn-comprar {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-comprar:hover {
+  background: var(--accent-dim);
+}
+
+.btn-comprar:active {
+  transform: scale(0.97);
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1.25rem;
+}
+
+.ctrl-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #2a2a3a;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a2a3a;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 12px;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .nav-btn {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  .slide-image-wrap {
+    height: 220px;
+  }
+
+  .slide-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+  }
+
+  .btn-comprar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .carousel-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+}

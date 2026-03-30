@@ -6,87 +6,160 @@
     <title>GameByte Store</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
 
   <body>
-    <body style="background-color: white"></body>
     <!-- HEADER -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/LogoColor.png" alt="Logo" />
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">PlayStation</a></li>
-        <li><a href="#">Xbox</a></li>
-        <li><a href="#">Nintendo</a></li>
-        <li><a href="#">Accesorios</a></li>
-      </ul>
-    </nav>
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="images/Logo/LogoColor.png"
+            alt="GameZone"
+            class="logo-img"
+          />
+          <span class="logo-text"
+            >GAMEBYTE<span class="logo-accent">STORE</span></span
+          >
+        </a>
 
-    <!-- Sección de juegos destacados -->
-    <div class="games-section">
-      <h2 class="section-title">Juegos Destacados</h2>
+        <nav class="nav">
+          <a href="#ps5" class="nav-btn active">PS5</a>
+          <a href="#xbox" class="nav-btn">Xbox</a>
+          <a href="#nintendo" class="nav-btn">Nintendo</a>
+          <a href="#pc" class="nav-btn">PC</a>
+          <a href="#accesorios" class="nav-btn">Accesorios</a>
+        </nav>
 
-      <div class="games-container">
-        <!-- Tarjeta 1 -->
-        <div class="game-card">
-          <img src="images/GameDestacados/God.webp" alt="God of War" />
-          <div class="game-info">
-            <h3 class="game-title">God of War Ragnarök</h3>
-            <span class="game-console">
-              <i class="fas fa-gamepad"></i> PlayStation 5
-            </span>
-            <button class="btn-buy">
-              <i class="fas fa-cart-shopping"></i> Comprar
-            </button>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="game-card">
-          <img src="images/GameDestacados/Halo.webp" alt="Halo Infinite" />
-          <div class="game-info">
-            <h3 class="game-title">Halo Infinite</h3>
-            <span class="game-console">
-              <i class="fas fa-gamepad"></i> Xbox Series X
-            </span>
-            <button class="btn-buy">
-              <i class="fas fa-cart-shopping"></i> Comprar
-            </button>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="game-card">
-          <img src="images/GameDestacados/Zelda.webp" alt="Zelda" />
-          <div class="game-info">
-            <h3 class="game-title">Zelda: Tears of the Kingdom</h3>
-            <span class="game-console">
-              <i class="fas fa-gamepad"></i> Nintendo Switch
-            </span>
-            <button class="btn-buy">
-              <i class="fas fa-cart-shopping"></i> Comprar
-            </button>
-          </div>
-        </div>
-
-        <!-- Tarjeta 4 -->
-        <div class="game-card">
-          <img src="images/GameDestacados/Spider.webp" alt="Spider-Man" />
-          <div class="game-info">
-            <h3 class="game-title">Spider-Man 2</h3>
-            <span class="game-console">
-              <i class="fas fa-gamepad"></i> PlayStation 5
-            </span>
-            <button class="btn-buy">
-              <i class="fas fa-cart-shopping"></i> Comprar
-            </button>
-          </div>
+        <div class="header-actions">
+          <a href="#login" class="btn-login">Login</a>
+          <a href="#carrito" class="btn-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span>
+          </a>
         </div>
       </div>
-    </div>
+    </header>
+
+    <!-- CARRUSEL -->
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="track">
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img
+                  src="images/GameDestacados/God.webp"
+                  alt="God of War Ragnarok"
+                />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">God of War Ragnarok</p>
+                <p class="slide-meta">
+                  Acción · Aventura · PlayStation Studios
+                </p>
+                <p class="slide-price">$189.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img
+                  src="images/GameDestacados/Halo.webp"
+                  alt="Halo Infinite"
+                />
+                <span class="console-badge">Xbox</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Halo Infinite</p>
+                <p class="slide-meta">FPS · Multijugador · 343 Industries</p>
+                <p class="slide-price">$149.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/GameDestacados/Zelda.webp" alt="Zelda" />
+                <span class="console-badge">Nintendo Switch</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Zelda: Tears of the Kingdom</p>
+                <p class="slide-meta">Aventura · RPG · Nintendo</p>
+                <p class="slide-price">$219.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/GameDestacados/Spider.webp" alt="Spider-Man" />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Marvel's Spider-Man Remastered</p>
+                <p class="slide-meta">
+                  Acción · Mundo abierto · Insomniac Games
+                </p>
+                <p class="slide-price">$99.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="prev">&#8592;</button>
+        <div class="dots" id="dots"></div>
+        <button class="ctrl-btn" id="next">&#8594;</button>
+      </div>
+    </section>
+
+    <script>
+      const track = document.getElementById("track");
+      const dotsEl = document.getElementById("dots");
+      const slides = track.querySelectorAll(".game-slide");
+      let current = 0;
+
+      slides.forEach((_, i) => {
+        const d = document.createElement("button");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.onclick = () => goTo(i);
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dotsEl
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i === current));
+      }
+
+      document.getElementById("prev").onclick = () => goTo(current - 1);
+      document.getElementById("next").onclick = () => goTo(current + 1);
+
+      let autoplay = setInterval(() => goTo(current + 1), 4000);
+      track.addEventListener("mouseenter", () => clearInterval(autoplay));
+      track.addEventListener("mouseleave", () => {
+        autoplay = setInterval(() => goTo(current + 1), 4000);
+      });
+    </script>
   </body>
 </html>
