@@ -1,831 +1,752 @@
-/* ==============================
-   ESTILOS GENERALES DEL SITIO
-   ==============================
-*/
+/* ══════════════════════════════════════════
+   GAMEBYTE STORE — styles.css
+   ══════════════════════════════════════════ */
 
-/* Reset básico: caja, márgenes y fuente global */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #c5c6c7; /* color del texto principal */
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilo del body: fondo y altura de línea */
+:root {
+  --accent: #00e5ff;
+  --accent-dim: #00b8cc;
+  --bg-page: #0a0a0f;
+  --bg-card: #111118;
+  --bg-card-hover: #16161f;
+  --border: #1f1f2e;
+  --border-hover: #2e2e42;
+  --text-primary: #ffffff;
+  --text-secondary: #8888a8;
+  --text-muted: #555570;
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color: #0b0c10; /* fondo oscuro */
-    line-height: 1.5;
-    min-height: 100vh;
-}
-.linea{
-    color: white;
-    justify-content: center;
-}
-
-
-/* ==============================
-   HEADER Y NAVEGACIÓN
-   ==============================
-   Comentarios: contenedor del encabezado con logo y menú.
-*/
-
-/* --------------------------------------------
-   ENLACES DE SESIÓN (LOGIN Y REGISTRO)
-   -------------------------------------------- */
-.user-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
-.user-links a {
-    text-decoration: none;
-    color: #c5c6c7;
-    font-size: 0.95rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: background 0.2s ease;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-/* Hover general */
-.user-links a:hover {
-    background-color: rgba(102,252,241,0.1);
-    color: #66fcf1;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Enlace "Registrarse" más llamativo */
-.user-links .registro {
-    background: linear-gradient(90deg, #66fcf1, #45a29e);
-    color: #062426;
-    font-weight: bold;
+/* ══════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════ */
+
+.header {
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
 
-.user-links .registro:hover {
-    opacity: 0.9;
-}
-
-
-/* Fondo y borde inferior del header */
-.site-header {
-    background: linear-gradient(180deg, rgba(16,18,20,0.95), rgba(15,17,19,0.9));
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Área interna del header: centrado y con flex para alinear */
 .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo: altura fija para consistencia */
-.logo {
-    height: 60px;
-}
-
-/* Navegación: lista horizontal */
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 12px;
-}
-
-/* Enlaces del menú: apariencia básica y efecto hover */
-.main-nav a {
-    text-decoration: none;
-    color: #c5c6c7;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: background 0.2s ease;
-}
-
-/* Hover en enlaces: pequeño fondo para indicar interactividad */
-.main-nav a:hover {
-    background-color: rgba(102,252,241,0.1);
-    color: #ffffff;
-}
-
-/* Enlace activo (página actual): destacar con degradado */
-.main-nav a.active {
-    background: linear-gradient(90deg, #66fcf1, #45a29e);
-    color: #062426;
-}
-
-/* ==============================
-   BANNER PRINCIPAL
-   ==============================
-   Comentarios: imagen fija de banner (no carrusel). Texto y CTA encima.
-*/
-
-/* Contenedor del banner: centrado, alto moderado */
-.banner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 350px; /* altura moderada para equilibrio visual */
-    overflow: hidden;
-}
-
-/* Imagen de fondo del banner: posicionada detrás del texto */
-.banner-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.25; /* sutil para mejorar legibilidad del texto */
-}
-
-/* Texto del banner en primer plano */
-.banner-text {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-/* Título principal en el banner */
-.banner-text h1 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-    color: #66fcf1; /* color de acento */
-}
-
-/* Eslogan debajo del título */
-.slogan {
-    color: #9aa0a6; /* texto más tenue */
-    margin-bottom: 16px;
-}
-
-/* Botón principal del banner (CTA) */
-.cta {
-    display: inline-block;
-    background: linear-gradient(90deg, #66fcf1, #45a29e);
-    color: #062426;
-    text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-}
-
-/* Pequeña animación al pasar el ratón sobre el CTA */
-.cta:hover {
-    transform: translateY(-3px);
-}
-
-/* ==============================
-   SECCIÓN DE CATEGORÍAS
-   ==============================
-   Comentarios: lista de categorías en bloque, responsiva.
-*/
-
-main {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 16px 60px;
-}
-
-/* Título de categorías */
-.categorias h2 {
-    margin-bottom: 10px;
-    color: #66fcf1;
-}
-
-/* Lista de categorías: fila que envuelve */
-.categoria-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* Elementos de categoría: paneles pequeños */
-.categoria-list li {
-    background-color: #1f2833;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-/* ==============================
-   CARRUSEL DE PRODUCTOS DESTACADOS
-   ==============================
-   Comentarios: carrusel visual (sin JS o con JS opcional).
-   - max-width: 820px para que no ocupe demasiado
-   - altura de las imágenes: 240px (moderada)
-*/
-
-/* Contenedor general de la sección */
-.destacados {
-    margin-top: 30px;
-}
-
-/* Título centrado de la sección */
-.destacados h2 {
-    color: #66fcf1;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* Contenedor principal del "carrusel" */
-.carousel-container {
-    position: relative;
-    overflow: hidden;          /* oculta lo que salga del área visible */
-    width: 100%;
-    max-width: 900px;          /* ANCHO moderado */
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-/* Pista del carrusel: flex para alinear imágenes en fila */
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease; /* útil si añades JS para mover pista */
-}
-
-/* Imágenes del carrusel: ocupan el ancho del contenedor visible */
-.carousel-track img {
-    width: 100%;
-    flex-shrink: 0;            /* evita que se reduzcan si falta espacio */
-    height: 480px;             /* ALTO moderado */
-    object-fit: cover;         /* recorta pero sin deformar */
-    border-radius: 10px;
-}
-
-/* Botones (opcionales): estilo discreto encima del carrusel */
-.prev-prod, .next-prod {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    font-size: 22px;
-    padding: 6px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-/* Posición de botones */
-.prev-prod { left: 10px; }
-.next-prod { right: 10px; }
-
-/* Hover más oscuro para los botones */
-.prev-prod:hover, .next-prod:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-/* ==============================
-   SECCIÓN "SOBRE LA TIENDA"
-   ==============================
-   Comentarios: bloque informativo con fondo sutil.
-*/
-
-.sobre {
-    text-align: justify;
-    margin-top: 40px;
-    background: rgba(255,255,255,0.03);
-    padding: 16px;
-    border-radius: 8px;
-}
-
-.sobre h2 {
-    color: #66fcf1;
-    margin-bottom: 8px;
-}
-
-/* ==============================
-   FOOTER
-   ==============================
-   Comentarios: pie con fondo oscuro y enlaces.
-*/
-
-.site-footer {
-    background: #071015;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 20px 0;
-}
-
-.footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.footer-inner h4 {
-    color: #66fcf1;
-    margin-bottom: 6px;
-}
-
-.footer-inner ul {
-    list-style: none;
-}
-
-.footer-inner a {
-    text-decoration: none;
-    color: #c5c6c7;
-}
-
-.footer-inner a:hover {
-    color: #66fcf1;
-}
-
-/* Texto de copyright centrado */
-.copyright {
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
-    color: #9aa0a6;
-}
-
-/* ============================================================
-   ESTILOS EXCLUSIVOS PARA LA PÁGINA 2 - PRODUCTOS
-   ============================================================ */
-
-/* --------------------------------------------
-   BANNER CORTO DEL CATÁLOGO
-   -------------------------------------------- */
-.banner-catalogo {
-    background-color: #1f2833;   /* Fondo oscuro igual que el resto del sitio */
-    text-align: center;          /* Centra el texto */
-    padding: 40px 16px;          /* Espaciado superior e inferior */
-    border-bottom: 1px solid rgba(255,255,255,0.1); /* Línea separadora */
-}
-
-.banner2{  
-   position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    object-fit:cover;
-    opacity: 0.25; /* sutil para mejorar legibilidad del texto */
-}
-
-.banner-catalogo h1 {
-    color: #66fcf1;              /* Color de acento */
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-}
-
-.banner-catalogo p {
-    color: #9aa0a6;              /* Texto más claro */
-    font-size: 1rem;
-}
-
-/* --------------------------------------------
-   BARRA DE CATEGORÍAS
-   -------------------------------------------- */
-.barra-categorias {
-    background-color: #0b0c10;
-    text-align: center;
-    padding: 16px 0;
-}
-
-.barra-categorias ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;           /* Permite que salte de línea si no cabe */
-    justify-content: center;
-    gap: 10px;
-}
-
-.barra-categorias li {
-    background-color: #1f2833;
-    color: #c5c6c7;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.2s ease;
-}
-
-.barra-categorias li:hover {
-    background-color: #45a29e;  /* Cambio de color al pasar el mouse */
-    color: #062426;
-}
-
-/* --------------------------------------------
-   GALERÍA DE PRODUCTOS
-   -------------------------------------------- */
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;     /* Centra las columnas */
-    gap: 20px;                   /* Espacio entre productos */
-    padding: 40px 0;
-}
-
-/* Cada tarjeta de producto */
-.producto {
-    background-color: #1f2833;   /* Fondo de la tarjeta */
-    width: 280px;                /* Tamaño moderado */
-    padding: 14px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-
-/* Pequeña animación al pasar el mouse */
-.producto:hover {
-    transform: translateY(-4px);
-}
-
-/* Imagen del producto */
-.producto img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;           /* Asegura que no se deforme */
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-/* Nombre del producto */
-.producto h3 {
-    color: #66fcf1;
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-}
-
-/* Precio */
-.producto p {
-    color: #9aa0a6;
-    margin-bottom: 10px;
-}
-
-/* Contenedor de botones */
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Botón "Ver más" */
-.botones .ver {
-    background-color: transparent;
-    border: 1px solid #45a29e;
-    color: #66fcf1;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-/* Hover en botón "Ver más" */
-.botones .ver:hover {
-    background-color: #45a29e;
-    color: #062426;
-}
-
-/* Botón "Añadir" */
-.botones .agregar {
-    background: linear-gradient(90deg, #66fcf1, #45a29e);
-    border: none;
-    color: #062426;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-}
-
-/* Hover en botón "Añadir" */
-.botones .agregar:hover {
-    opacity: 0.9;
-}
-
-/* --------------------------------------------
-   ÍCONO DEL CARRITO EN EL ENCABEZADO
-   -------------------------------------------- */
-.carrito {
-    font-size: 1.6rem;
-    color: #66fcf1;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.carrito:hover {
-    transform: scale(1.1);
-}
-
-/* --------------------------------------------
-   AJUSTES RESPONSIVOS
-   -------------------------------------------- */
-@media (max-width: 768px) {
-    .producto {
-        width: 45%;             /* Dos columnas en tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .producto {
-        width: 90%;             /* Una columna en móviles */
-    }
-}
-
-/* ============================
-   CRUD PAGE STYLES
-============================ */
-
-.crud-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 16px;
-}
-
-.crud-container h2 {
-    color: #66fcf1;
-    margin-bottom: 8px;
-}
-
-.form-crud {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background-color: #1f2833;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.form-crud input {
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-}
-
-/* Botón guardar */
-.btn-guardar {
-    background: linear-gradient(90deg, #66fcf1, #45a29e);
-    color: #062426;
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 6px;
-}
-
-.btn-guardar:hover {
-    opacity: 0.9;
-}
-
-/* ============================
-   Página Modelo BD
-============================ */
-
-.bd-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 16px;
-}
-
-/* Imagen modelo BD */
-
-.bd-imagen img {
-    width: 100%;          /* Se adapta al ancho disponible */
-    max-width: 900px;     /* Tamaño máximo */
-    display: block;       /* Quita espacio extra */
-    margin: 0 auto;       /* Centrar imagen */
-    border-radius: 8px;   /* Esquinas suaves */
-    border: 2px solid rgba(102,252,241,0.2); /* Borde gamer suave */
-}
-
-
-/* Título secundario */
-.bd-container h2 {
-    color: #66fcf1;
-    margin-bottom: 12px;
-}
-
-/* Cuadro donde irá la imagen real */
-.bd-imagen {
-    background-color: #1f2833;
-    border: 1px solid rgba(102,252,241,0.25);
-    border-radius: 8px;
-    padding: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #9aa0a6;
-}
-
-/* Texto explicativo */
-.bd-texto {
-    background-color: #1f2833;
-    padding: 16px;
-    border-radius: 8px;
-    color: #c5c6c7;
-}
-
-/* ==============================
-   AJUSTES RESPONSIVOS
-   ==============================
-   Comentarios: adapta alturas y disposición en pantallas más pequeñas.
-*/
-
-@media (max-width: 768px) {
-    /* Menú envuelto en varias líneas si hace falta */
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* Altura del carrusel un poco menor en tablets */
-    .carousel-track img {
-        height: 200px;
-    }
-
-    /* Título del banner más pequeño */
-    .banner-text h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Header en columna para móviles */
-    .header-inner {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    /* Banner más compacto en móvil */
-    .banner {
-        min-height: 260px;
-    }
-
-    /* Carrusel también se hace más compacto en móviles */
-    .carousel-track img {
-        height: 180px;
-    }
-}
-
-/* ============================
-   Página Lógica del Sistema
-============================ */
-
-.logic-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 16px;
-}
-
-.logic-container h2 {
-    color: #66fcf1;
-    margin-bottom: 12px;
-}
-
-.logic-text {
-    background-color: #1f2833;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.contenido-logica h3 {
-  color: #2ecc71;
-  border-left: 5px solid #2ecc71;
-  padding-left: 10px;
-  margin-top: 20px;
-}
-
-.java {
-  background-color: #1a1a1a;
-  color: #dcdcdc;
-  padding: 20px;
-  border-radius: 10px;
-  font-family: 'Courier New', monospace;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  line-height: 1.5;
-  border: 1px solid #2ecc71;
-  box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-
-
-/* Diagrama simple */
-.logic-diagram {
-    text-align: center;
-    margin-bottom: 20px;
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-.logic-box {
-    background-color: #1f2833;
-    border: 1px solid rgba(102,252,241,0.3);
-    padding: 10px;
-    border-radius: 6px;
-    width: 70%;
-    margin: 0 auto 8px;
-    font-weight: bold;
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* ============================
-   Página de Contacto
-============================ */
-
-.contact-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 16px;
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
-.contact-container h2 {
-    color: #66fcf1;
-    margin-bottom: 10px;
+.logo-accent {
+  color: var(--accent);
 }
 
-.contact-box {
-    background-color: #1f2833;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    line-height: 1.6;
+/* Navegación */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
-.mapa-box {
-    background-color: #1f2833;
-    padding: 40px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid rgba(102,252,241,0.3);
-    color: #9aa0a6;
-    font-size: 1rem;
+.nav-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 7px 13px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
 }
 
-/* ============================
-   Página del Equipo
-============================ */
-
-.equipo-container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 16px;
+.nav-btn:hover {
+  color: var(--text-primary);
+  background: #1a1a2a;
 }
 
-.equipo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
+.nav-btn.active {
+  color: var(--accent);
 }
 
-.equipo-card {
-    background-color: #1f2833;
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(102,252,241,0.2);
+/* Acciones del header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.equipo-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    object-fit: cover;
+.btn-login {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bbb;
+  border: 1px solid #2a2a3a;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s, color 0.15s;
 }
 
-.equipo-card h3 {
-    color: #66fcf1;
-    margin-bottom: 5px;
+.btn-login:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
-.equipo-card .rol {
-    color: #45a29e;
-    font-weight: bold;
-    margin-bottom: 8px;
+.btn-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #2a2a3a;
+  border-radius: var(--radius-sm);
+  color: #bbb;
+  font-size: 15px;
+  transition: border-color 0.15s, color 0.15s;
 }
 
-/* Responsive */
+.btn-cart:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: var(--accent);
+  color: #000;
+  font-size: 9px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════
+   CARRUSEL
+   ══════════════════════════════════════════ */
+
+.carousel-section {
+  padding: 2.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.game-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide-inner {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+}
+
+/* Imagen del slide */
+.slide-image-wrap {
+  position: relative;
+  height: 340px;
+  background: #05050f;
+  overflow: hidden;
+}
+
+.slide-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.slide-image-wrap:hover img {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.console-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+/* Cuerpo del slide */
+.slide-body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.slide-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.slide-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.slide-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.btn-comprar {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-comprar:hover {
+  background: var(--accent-dim);
+}
+
+.btn-comprar:active {
+  transform: scale(0.97);
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1.25rem;
+}
+
+.ctrl-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #2a2a3a;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a2a3a;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
 @media (max-width: 768px) {
-    .equipo-grid {
-        grid-template-columns: 1fr;
-    }
+  .header-inner {
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 12px;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .nav-btn {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  .slide-image-wrap {
+    height: 220px;
+  }
+
+  .slide-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+  }
+
+  .btn-comprar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .carousel-section {
+    padding: 1.5rem 1rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+}
 
+/* ══════════════════════════════════════════
+   SECCIÓN NINTENDO SWITCH
+   ══════════════════════════════════════════ */
 
+.ns-section {
+  padding: 40px 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
 
+.ns-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
 
+.ns-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #00e5ff;
+  padding: 6px 14px 6px 8px;
+  border-radius: 24px;
+}
 
-/* ==============================
-   FIN DEL CSS
-   ============================== */
+.ns-logo-icon {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
+.ns-logo-icon svg {
+  width: 13px;
+  height: 13px;
+}
 
+.ns-logo-text {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
 
+.ns-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
+.ns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
+.ns-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
 
+.ns-card:hover {
+  border-color: rgba(228, 0, 15, 0.5);
+  transform: translateX(4px);
+}
+
+.ns-cover {
+  position: relative;
+  width: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #0d0d1a;
+}
+
+.ns-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ns-card:hover .ns-cover img {
+  transform: scale(1.06);
+}
+
+.ns-platform {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #e4000f;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 7px;
+  border-radius: 20px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.ns-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  flex: 1;
+  gap: 16px;
+  border-left: 1px solid var(--border);
+}
+
+.ns-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.ns-name {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ns-genre {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.ns-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.ns-price {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #e4000f;
+  white-space: nowrap;
+}
+
+.ns-btn {
+  background: transparent;
+  border: 1px solid rgba(228, 0, 15, 0.5);
+  color: #e4000f;
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ns-btn:hover {
+  background: #e4000f;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .ns-cover {
+    width: 80px;
+  }
+
+  .ns-info {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .ns-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ns-name {
+    white-space: normal;
+  }
+}
+
+/* ══════════════════════════════════════════
+   SECCIÓN ABOUT — GAMESTORE
+   ══════════════════════════════════════════ */
+
+.about {
+  background: #000;
+  padding: 72px 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: 'GAMESTORE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.1em;
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tag-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 36px;
+}
+
+.tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.tag-text {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.headline span {
+  color: var(--accent);
+}
+
+.headline-sub {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 36px;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.9;
+  max-width: 700px;
+}
+
+.body-text strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.body-text .highlight {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 48px 1rem;
+  }
+
+  .about::before {
+    font-size: 60px;
+  }
+}

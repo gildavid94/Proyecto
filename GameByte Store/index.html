@@ -1,145 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GameByte Store - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/Logo 1.png" alt="Logo GameByte Store" class="logo">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="formulario.html">Formulario</a></li>
-                    <li><a href="basededatos.html">Modelo BD</a></li>
-                    <li><a href="logica.html">Lógica</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="integrantes.html">Equipo</a></li>
-                </ul>
-            </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameByte Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-             <!-- Enlaces de sesión -->
-        <div class="user-links">
-            <a href="#">Iniciar sesión</a>
-            <a href="formulario.html" class="registro">Registrarse</a>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="images/Logo/LogoColor.png"
+            alt="GameZone"
+            class="logo-img"
+          />
+          <span class="logo-text"
+            >GAMEBYTE<span class="logo-accent">STORE</span></span
+          >
+        </a>
+
+        <nav class="nav">
+          <a href="#ps5" class="nav-btn active">PS5</a>
+          <a href="#xbox" class="nav-btn">Xbox</a>
+          <a href="#nintendo" class="nav-btn">Nintendo</a>
+          <a href="#pc" class="nav-btn">PC</a>
+          <a href="#accesorios" class="nav-btn">Accesorios</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn-login">Login</a>
+          <a href="#carrito" class="btn-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span>
+          </a>
         </div>
-            <div class="carrito">
-            🛒
-        </div>
-        </div>
+      </div>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
-    <section class="banner">
-        <img src="images/Banners/banner1.jpg" alt="Banner principal GameByte Store" class="banner-img">
-        <div class="banner-text">
-            <h1>GameByte Store</h1>
-            <p class="slogan">Tu mundo gamer en un solo lugar</p>
-            <a href="productos.html" class="cta">Ver productos</a>
+    <!-- CARRUSEL -->
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="track">
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img
+                  src="images/GameDestacados/God.webp"
+                  alt="God of War Ragnarok"
+                />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">God of War Ragnarok</p>
+                <p class="slide-meta">
+                  Acción · Aventura · PlayStation Studios
+                </p>
+                <p class="slide-price">$189.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img
+                  src="images/GameDestacados/Halo.webp"
+                  alt="Halo Infinite"
+                />
+                <span class="console-badge">Xbox</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Halo Infinite</p>
+                <p class="slide-meta">FPS · Multijugador · 343 Industries</p>
+                <p class="slide-price">$149.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/GameDestacados/Zelda.webp" alt="Zelda" />
+                <span class="console-badge">Nintendo Switch</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Zelda: Tears of the Kingdom</p>
+                <p class="slide-meta">Aventura · RPG · Nintendo</p>
+                <p class="slide-price">$219.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/GameDestacados/Spider.webp" alt="Spider-Man" />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Marvel's Spider-Man Remastered</p>
+                <p class="slide-meta">
+                  Acción · Mundo abierto · Insomniac Games
+                </p>
+                <p class="slide-price">$99.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="prev">&#8592;</button>
+        <div class="dots" id="dots"></div>
+        <button class="ctrl-btn" id="next">&#8594;</button>
+      </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-
-        <!-- PRODUCTOS DESTACADOS (CARRUSEL) -->
-        <section class="destacados">
-            <h2>Descuentos del Mes</h2>
-            <div class="carousel-container">
-                <button class="prev-prod" aria-label="Anterior">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="images/Carrusel 1/img1_carrusel1.avif" alt="MarioGalaxy">
-                    <img src="images/Productos/Consolas/6.Nintendo Switch Lite.jpg" alt="Nintendo">
-                    <img src="images/Productos/Sillas Gamer/51.Silla Gamer Reclinable Roja.jpg" alt="Ninja">
-                    <img src="images/Productos/Consolas/9.Xbox One X.jpg" alt="Xbox">
-                    <img src="images/Productos/Componentes de PC/61.Adaptador M.2 NVMe a PCIe.jpg" alt="Adaptador">
-                </div>
-                <button class="next-prod" aria-label="Siguiente">&#10095;</button>
-            </div>
-        </section>
-
-        <!-- SOBRE LA TIENDA -->
-        <section class="sobre">
-            <h2>Sobre GameByte Store</h2>
-
-            <br>
-
-            <h2>🕹️ Historia</h2>
-
-            <p>GameByte Store nació con la idea de reunir en un solo lugar todo lo que un gamer necesita: consolas, videojuegos, accesorios y contenido digital. Desde sus inicios, la tienda se ha enfocado en ofrecer una experiencia moderna, confiable y pensada para jugadores de todo tipo, desde los casuales hasta los coleccionistas más exigentes. 
-            </p>
-
-            <br>
-
-            <h2>🎯 Misión</h2>
-
-            <p>Brindar a nuestros clientes una experiencia de compra completa y segura, ofreciendo productos de calidad, precios competitivos y atención personalizada, en una plataforma intuitiva y confiable que celebra la pasión por los videojuegos.
-            </p>
-
-            <br>
-
-            <h2>🌟 Visión</h2>
-
-            <p>Ser la tienda líder en el mundo gamer, reconocida por su innovación, servicio al cliente y compromiso con la comunidad, convirtiéndose en el referente principal para los amantes de los videojuegos y la tecnología.
-            </p>        
-                            
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>Email: contacto@gamebyte.store</p>
-                <p>Tel: +57 300 000 0000</p>
-            </div>
-            <div class="social">
-                <h4>Síguenos</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com" target="_blank">
-                        <img src="images/Logos Redes/facebook (1).png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                    <li><a href="https://www.instagram.com" target="_blank">
-                        <img src="images/Logos Redes/instagram.png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                    <li><a href="https://www.x.com" target="_blank">
-                        <img src="images/Logos Redes/twitter.png" alt="logo" width="32px">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 GameByte Store</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPT DEL CARRUSEL -->
     <script>
-        const track = document.querySelector('.carousel-track');
-        const prodImages = document.querySelectorAll('.carousel-track img');
-        let index = 0;
+      const track = document.getElementById("track");
+      const dotsEl = document.getElementById("dots");
+      const slides = track.querySelectorAll(".game-slide");
+      let current = 0;
 
-        document.querySelector('.next-prod').addEventListener('click', () => {
-            index = (index + 1) % prodImages.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
+      slides.forEach((_, i) => {
+        const d = document.createElement("button");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.onclick = () => goTo(i);
+        dotsEl.appendChild(d);
+      });
 
-        document.querySelector('.prev-prod').addEventListener('click', () => {
-            index = (index - 1 + prodImages.length) % prodImages.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dotsEl
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i === current));
+      }
+
+      document.getElementById("prev").onclick = () => goTo(current - 1);
+      document.getElementById("next").onclick = () => goTo(current + 1);
+
+      let autoplay = setInterval(() => goTo(current + 1), 4000);
+      track.addEventListener("mouseenter", () => clearInterval(autoplay));
+      track.addEventListener("mouseleave", () => {
+        autoplay = setInterval(() => goTo(current + 1), 4000);
+      });
     </script>
-</body>
-</html>
 
+    <!-- SECCIÓN NINTENDO SWITCH -->
+    <section class="ns-section">
+      <div class="ns-header">
+        <div class="ns-logo">
+          <div class="ns-logo-icon">
+            <svg viewBox="0 0 13 13" fill="none">
+              <rect x="1" y="3" width="5" height="7" rx="2.5" fill="#e4000f" />
+              <rect x="7" y="3" width="5" height="7" rx="2.5" fill="#0073cf" />
+            </svg>
+          </div>
+          <span class="ns-logo-text">Nintendo Switch</span>
+        </div>
+        <span class="ns-title">Juegos destacados</span>
+      </div>
+
+      <div class="ns-list">
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img
+              src="/images/GameDestacados/CyberPunknintendo.webp"
+              alt="Cyberpunk 2077"
+            />
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Cyberpunk 2077</p>
+              <p class="ns-genre">Aventura · RPG · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$219.900 COP</span>
+              <button class="ns-btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img
+              src="/images/GameDestacados/FinalFantasynintendo.webp"
+              alt="Final Fantasy"
+            />
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Final Fantasy</p>
+              <p class="ns-genre">RPG · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$189.900 COP</span>
+              <button class="ns-btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img
+              src="/images/GameDestacados/FirstLightnintendo.webp"
+              alt="First Light 007"
+            />
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">First Light 007</p>
+              <p class="ns-genre">Acción · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$179.900 COP</span>
+              <button class="ns-btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img
+              src="/images/GameDestacados/Outboundnintendo.webp"
+              alt="Outbound"
+            />
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Outbound</p>
+              <p class="ns-genre">Acción · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$159.900 COP</span>
+              <button class="ns-btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ABOUT GAMESTORE -->
+    <section class="about">
+      <div class="about-inner">
+        <div class="tag-line">
+          <span class="tag-dot"></span>
+          <span class="tag-text">Colombia · Desde 2026</span>
+        </div>
+
+        <p class="headline">Somos <span>GameByte Store</span>.</p>
+        <p class="headline-sub">Juega mas alla de los limites.</p>
+
+        <div class="divider"></div>
+
+        <p class="body-text">
+          Nacimos en <strong>Colombia en 2026</strong> con una misión clara:
+          llevarle a cada gamer del país la mejor experiencia de compra en
+          videojuegos, consolas y accesorios. No somos solo una tienda — somos
+          <span class="highlight">la comunidad gamer colombiana</span> que
+          estaba esperando existir.<br /><br />
+          En GameByte Store encontrarás los títulos más recientes para
+          <strong>PS5, Xbox, Nintendo Switch y PC</strong>, con precios justos,
+          stock actualizado y las
+          <span class="highlight">últimas noticias del mundo gamer</span>
+          para que nunca te pierdas un lanzamiento, una actualización o una
+          oferta épica.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
