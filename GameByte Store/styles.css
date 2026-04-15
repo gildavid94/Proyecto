@@ -1,8 +1,3 @@
-/* ══════════════════════════════════════════
-   GAMEBYTE STORE — styles.css
-   ══════════════════════════════════════════ */
-
-/* ── RESET & BASE ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +7,7 @@
 :root {
   --accent: rgb(0, 229, 255);
   --accent-dim: rgb(0, 229, 255);
-  --bg-page: rgb(255, 255, 255);
+  --bg-page: rgb(11, 11, 18);
   --bg-card: rgb(22, 22, 31);
   --border: rgb(0, 229, 255);
   --text-primary: rgb(255, 255, 255);
@@ -47,10 +42,6 @@ a {
   color: inherit;
 }
 
-/* ══════════════════════════════════════════
-   HEADER
-   ══════════════════════════════════════════ */
-
 .header {
   background: rgb(22,22,31);
   border-bottom: 1px solid var(--border);
@@ -71,7 +62,6 @@ a {
   margin: 0 auto;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -98,7 +88,6 @@ a {
   color: var(--accent);
 }
 
-/* Navegación */
 .nav {
   display: flex;
   align-items: center;
@@ -118,11 +107,7 @@ a {
 }
 
 .nav-btn.active {
-  color: var(--accent);
-
-}
-
-/* Acciones del header */
+  color: var(--accent);}
 .header-actions {
   display: flex;
   align-items: center;
@@ -185,10 +170,6 @@ a {
   line-height: 1;
 }
 
-/* ══════════════════════════════════════════
-   CARRUSEL
-   ══════════════════════════════════════════ */
-
 .carousel-section {
   padding: 2.5rem 2rem;
   max-width: 1400px;
@@ -217,7 +198,6 @@ a {
   background: var(--bg-card);
 }
 
-/* Imagen del slide */
 .slide-image-wrap {
   position: relative;
   height: 400px;
@@ -254,7 +234,6 @@ a {
   text-transform: uppercase;
 }
 
-/* Cuerpo del slide */
 .slide-body {
   padding: 1.5rem 2rem;
   display: flex;
@@ -311,7 +290,6 @@ a {
   transform: scale(0.97);
 }
 
-/* Controles del carrusel */
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -324,9 +302,9 @@ a {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgb(0, 229, 255);    /* color del borde */
-  background: rgba(0, 229, 255, 0.1);    /* fondo semitransparente */
-  color: rgb(0, 229, 255);               /* color de la flecha */
+  border: 1px solid rgb(0, 229, 255);    
+  background: rgba(0, 229, 255, 0.1);    
+  color: rgb(0, 229, 255);               
   font-size: 18px;
   cursor: pointer;
   display: flex;
@@ -336,8 +314,8 @@ a {
 }
 
 .ctrl-btn:hover {
-  background: rgb(0, 229, 255);          /* fondo sólido al pasar el mouse */
-  color: rgb(17, 17, 24);               /* flecha oscura sobre fondo cian */
+  background: rgb(0, 229, 255);          
+  color: rgb(17, 17, 24);               
 }
 
 .dots {
@@ -351,16 +329,13 @@ a {
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.3);
   transition: width 0.3s, background 0.2s;
+  border: none;
 }
 
 .dot.active {
-  width: 24px;           /* se alarga horizontalmente */
+  width: 24px;           
   background: rgb(0, 229, 255);
 }
-
-/* ══════════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════════ */
 
 @media (max-width: 768px) {
   .header-inner {
@@ -406,10 +381,6 @@ a {
   }
 }
 
-/* ══════════════════════════════════════════
-   SECCIÓN NINTENDO SWITCH
-   ══════════════════════════════════════════ */
-
 .ns-section {
   padding: 40px 2rem;
   max-width: 1400px;
@@ -426,7 +397,7 @@ a {
 
 .ns-logo {
   display: flex;
-  align-items: center
+  align-items: center;
   background: rgba(228, 0, 15, 0.15); 
   border: 1px solid rgb(228, 0, 15);
   gap: 8px;
@@ -437,7 +408,7 @@ a {
 .ns-logo-icon {
   width: 22px;
   height: 22px;
-  background: rgba(0, 0, 0, 0.2);   /* cambia este color */
+  background: rgba(0, 0, 0, 0.2);   
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -454,7 +425,7 @@ a {
   font-family: var(--font-display);
   font-size: 10px;
   font-weight: 600;
-  color: rgb(228, 0, 15);       /* cambia este color */
+  color: rgb(228, 0, 15);       
   letter-spacing: 0.1em;
   white-space: nowrap;
 }
@@ -468,7 +439,6 @@ a {
   text-transform: uppercase;
 }
 
-/* ── LISTA HORIZONTAL CON SCROLL ── */
 .ns-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -477,13 +447,13 @@ a {
 
 @media (max-width: 768px) {
   .ns-list {
-    grid-template-columns: repeat(2, 1fr);  /* 2 columnas en móvil */
+    grid-template-columns: repeat(2, 1fr);  
   }
 }
 
 @media (max-width: 480px) {
   .ns-list {
-    grid-template-columns: 1fr;             /* 1 columna en pantallas pequeñas */
+    grid-template-columns: 1fr;             
   }
 }
 
@@ -491,15 +461,14 @@ a {
   display: none;
 }
 
-/* ── TARJETA VERTICAL (portada arriba, info abajo) ── */
 .ns-card {
   background: var(--bg-card);
-  border: 1px solid rgba(0, 229, 255, 0.25); /* cian completo, tu color accent */
+  border: 1px solid rgba(0, 229, 255, 0.25); 
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
-  flex-direction: column;     /* ← cambia de row a column */
-  flex: 0 0 150px;            /* ancho fijo, no se encoge */
+  flex-direction: column;     
+  flex: 0 0 150px;            
   scroll-snap-align: start;
   transition: border-color 0.2s, transform 0.2s;
   cursor: default;
@@ -509,14 +478,13 @@ a {
 
 .ns-card:hover {
   border-color: rgb(0, 229, 255);
-  transform: translateY(-4px); /* sube en vez de desplazarse a la derecha */
+  transform: translateY(-4px); 
 }
 
-/* ── PORTADA ocupa todo el ancho ── */
 .ns-cover {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 3;       /* proporción típica de portada de juego */
+  aspect-ratio: 2 / 3;       
   flex-shrink: 0;
   overflow: hidden;
   background: rgb(0, 229, 255);
@@ -525,9 +493,9 @@ a {
 .ns-cover img {
   width: 100%;
   height: 100%;
-  object-fit: contain;          /* muestra la imagen completa */
+  object-fit: contain;          
   object-position: center;
-  background: #fff;  /* fondo oscuro para los espacios vacíos */
+  background: #fff;  
 }
 
 .ns-card:hover .ns-cover img {
@@ -550,13 +518,12 @@ a {
   text-transform: uppercase;
 }
 
-/* ── INFO debajo de la portada ── */
 .ns-info {
   display: flex;
-  flex-direction: column;     /* nombre, género, precio y botón apilados */
+  flex-direction: column;     
   padding: 12px 14px;
   gap: 8px;
-  border-left: none;          /* ya no hay borde lateral */
+  border-left: none;          
   border-top: 1px solid var(--border);
   flex: 1;
 }
@@ -587,7 +554,7 @@ a {
 .ns-right {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* precio a la izq, botón a la der */
+  justify-content: space-between; 
   gap: 8px;
   flex-shrink: 0;
 }
@@ -621,10 +588,9 @@ a {
   color: rgb(0, 0, 0);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .ns-card {
-    flex: 0 0 140px; /* tarjetas más angostas en móvil */
+    flex: 0 0 140px; 
   }
 
   .ns-info {
@@ -643,17 +609,13 @@ a {
   }
 }
 
-/* ══════════════════════════════════════════
-   SECCIÓN ABOUT — GAMESTORE
-   ══════════════════════════════════════════ */
-
 .about {
   background: #000;
   padding: 72px 2rem;
   position: relative;
   overflow: hidden;
-  border-radius: 24px;        /* agrega esta línea */
-  margin: 0 2rem;             /* agrega margen para que se vean las esquinas */
+  border-radius: 24px;        
+  margin: 0 2rem;             
 }
 
 .about::before {
@@ -773,9 +735,10 @@ a {
   color: #fff;
   padding: 56px 2rem 0;
   font-family: system-ui, sans-serif;
-  border-radius: 24px 24px 0 0;   /* agrega esta línea — solo esquinas de arriba */
-  margin: 0 1rem;                  /* agrega este margen para que se vean */
+  border-radius: 24px 24px 0 0;   
+  margin: 0 1rem;                  
 }
+
 .ft-top {
   display: grid;
   grid-template-columns: 200px repeat(4, minmax(0, 1fr));
@@ -785,6 +748,7 @@ a {
   padding-bottom: 48px;
   border-bottom: 0.5px solid rgba(255,255,255,0.1);
 }
+
 .ft-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
 .ft-logo-icon {
   background: transparent;
@@ -800,6 +764,7 @@ a {
   letter-spacing: 0.1em; text-transform: uppercase;
   color: rgb(0, 229, 255); margin: 0 0 16px;
 }
+
 .ft-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .ft-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
 .ft-links a:hover { color: rgb(0, 229, 255); }
@@ -808,17 +773,9 @@ a {
   padding: 20px 0 28px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
+
 .ft-copy { font-size: 12px; color: rgba(255,255,255,0.3); margin: 0; }
 .ft-socials { display: flex; gap: 10px; }
-.ft-social-btn {
-  width: 22px; height: 9px; border-radius: 50%;
-  border: 0.5px solid rgba(255,255,255,0.15);
-  background: transparent; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: border-color 0.15s, background 0.15s;
-}
-.ft-social-btn:hover { border-color: rgb(0, 229, 255); background: rgba(0,229,255,0.08); }
-.ft-social-btn svg { width: 22px; height: 9px; fill: rgba(255,255,255,0.5); }
-.ft-social-btn:hover svg { fill: rgb(0, 229, 255); }
 
 @media (max-width: 900px) {
   .ft-top { grid-template-columns: 1fr 1fr; }
@@ -831,21 +788,21 @@ a {
 .ft-socials {
   display: flex;
   gap: 10px;
-  align-items: center;    /* agrega esta línea */
+  align-items: center;    
 }
 
 .ft-socials img {
-  width: 24px;            /* tamaño fijo */
+  width: 24px;            
   height: 24px;
   object-fit: contain;
   cursor: pointer;
-  opacity: 0.6;           /* tenue por defecto */
+  opacity: 0.6;           
   transition: opacity 0.2s, transform 0.2s;
 }
 
 .ft-socials img:hover {
-  opacity: 1;             /* visible al pasar el mouse */
-  transform: scale(1.15); /* crece un poco */
+  opacity: 1;             
+  transform: scale(1.15);
 }
 
 .ft-socials a {
