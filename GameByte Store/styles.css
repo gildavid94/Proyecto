@@ -750,3 +750,147 @@ a {
     font-size: 60px;
   }
 }
+
+/* Style de xbox.html */
+ 
+        /* Estilos específicos tipo grilla profesional */
+        .category-container {
+            max-width: 1300px;
+            margin: 120px auto 60px; /* Margen superior para no chocar con el header fixed */
+            padding: 0 20px;
+        }
+
+        .category-header {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .category-header h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Grilla de 10 juegos */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .game-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .game-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.15);
+        }
+
+        .game-image {
+            width: 100%;
+            aspect-ratio: 3 / 4; /* Proporción estándar de carátulas */
+            overflow: hidden;
+            background: #1a1a24;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .game-item:hover .game-image img {
+            transform: scale(1.08);
+        }
+
+        .game-content {
+            padding: 18px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-status {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .game-title {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+            min-height: 2.6em; /* Evita que los nombres largos desalineen la tabla */
+        }
+
+        .game-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        .price {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .buy-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Badge de plataforma */
+        .platform-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(16, 124, 16, 0.9);
+            color: white;
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 2;
+        }
+    
