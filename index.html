@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GameByte Store</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="estilo.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap"
       rel="stylesheet"
@@ -56,7 +56,7 @@
             <div class="slide-inner">
               <div class="slide-image-wrap">
                 <img
-                  src="/GameByte Store/images/GameDestacados/God.webp"
+                  src="images/GameDestacados/God.webp"
                   alt="God of War Ragnarok"
                 />
                 <span class="console-badge">PS5</span>
@@ -76,7 +76,7 @@
             <div class="slide-inner">
               <div class="slide-image-wrap">
                 <img
-                  src="/GameByte Store/images/Halo.webp"
+                  src="/images/Halo.webp"
                   alt="Halo Infinite"
                 />
                 <span class="console-badge">Xbox</span>
@@ -93,7 +93,7 @@
           <div class="game-slide">
             <div class="slide-inner">
               <div class="slide-image-wrap">
-                <img src="/GameByte Store/images/Zelda.webp" alt="Zelda" />
+                <img src="/images/zeldagame.png" alt="Zelda" />
                 <span class="console-badge">Nintendo Switch</span>
               </div>
               <div class="slide-body">
@@ -132,98 +132,153 @@
     </section>
 
     <!-- SECCIÓN NINTENDO SWITCH -->
-    <section class="ns-section">
-      <div class="ns-header">
-        <div class="ns-logo">
-          <div class="ns-logo-icon">
-            <svg viewBox="0 0 13 13" fill="none">
-              <rect x="1" y="3" width="5" height="7" rx="2.5" fill="#e4000f" />
-              <rect x="7" y="3" width="5" height="7" rx="2.5" fill="#0073cf" />
-            </svg>
-          </div>
-          <span class="ns-logo-text">Nintendo Switch</span>
+    
+  <section class="product-section ns-theme">
+    <div class="section-header">
+      <div class="section-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 13 13" fill="none"><rect x="1" y="3" width="5" height="7" rx="2.5" fill="#e4000f"/><rect x="7" y="3" width="5" height="7" rx="2.5" fill="#0073cf"/></svg>
         </div>
-        <span class="ns-title">Juegos destacados</span>
+        <span class="logo-text">Nintendo Switch</span>
       </div>
+      <span class="section-title">Juegos destacados</span>
+    </div>
 
-      <div class="ns-list">
-        <div class="ns-card">
-          <div class="ns-cover">
-            <img
-              src="/GameByte Store/images/CyberPunknintendo.webp"
-              alt="Cyberpunk 2077"
-            />
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-cover"><img src="/images/CyberPunknintendo.webp" alt="Cyberpunk"></div>
+        <div class="product-info">
+          <div class="product-meta">
+            <p class="product-name">Cyberpunk 2077</p>
+            <p class="product-genre">Aventura · RPG · Nintendo</p>
           </div>
-          <div class="ns-info">
-            <div class="ns-meta">
-              <p class="ns-name">Cyberpunk 2077</p>
-              <p class="ns-genre">Aventura · RPG · Nintendo</p>
-            </div>
-            <div class="ns-right">
-              <span class="ns-price">$219.900 COP</span>
-              <button class="ns-btn">Comprar</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="ns-card">
-          <div class="ns-cover">
-            <img
-              src="/GameByte Store/images/FinalFantasynintendo.webp"
-              alt="Final Fantasy"
-            />
-          </div>
-          <div class="ns-info">
-            <div class="ns-meta">
-              <p class="ns-name">Final Fantasy</p>
-              <p class="ns-genre">RPG · Aventura · Nintendo</p>
-            </div>
-            <div class="ns-right">
-              <span class="ns-price">$189.900 COP</span>
-              <button class="ns-btn">Comprar</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="ns-card">
-          <div class="ns-cover">
-            <img
-              src="/GameByte Store/images/FirstLightnintendo.webp"
-              alt="First Light 007"
-            />
-          </div>
-          <div class="ns-info">
-            <div class="ns-meta">
-              <p class="ns-name">First Light 007</p>
-              <p class="ns-genre">Acción · Aventura · Nintendo</p>
-            </div>
-            <div class="ns-right">
-              <span class="ns-price">$179.900 COP</span>
-              <button class="ns-btn">Comprar</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="ns-card">
-          <div class="ns-cover">
-            <img
-              src="/GameByte Store/images/Outboundnintendo.webp"
-              alt="Outbound"
-            />
-          </div>
-          <div class="ns-info">
-            <div class="ns-meta">
-              <p class="ns-name">Outbound</p>
-              <p class="ns-genre">Acción · Aventura · Nintendo</p>
-            </div>
-            <div class="ns-right">
-              <span class="ns-price">$159.900 COP</span>
-              <button class="ns-btn">Comprar</button>
-            </div>
+          <div class="product-right">
+            <span class="product-price">$219.900 COP</span>
+            <button class="buy-btn">Comprar</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <section class="product-section pc-theme">
+    <div class="section-header">
+      <div class="section-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="#000"><path d="M20 18H4v-2h16v2Zm2-4H2V4h20v10Z"/></svg>
+        </div>
+        <span class="logo-text">PC Gaming</span>
+      </div>
+      <span class="section-title">Hardware de Elite</span>
+    </div>
+
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-cover"><img src="/images/torreRTX.png" alt="Torre RTX 4060 Ti"></div>
+        <div class="product-info">
+          <div class="product-meta">
+            <p class="product-name">Torre RTX 4060 Ti</p>
+            <p class="product-genre">Ryzen 7 · 16GB RAM · SSD 1TB</p>
+          </div>
+          <div class="product-right">
+            <span class="product-price">$4.200.000 COP</span>
+            <button class="buy-btn">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section acc-theme">
+    <div class="section-header">
+      <div class="section-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="#000"><path d="M20 7h-4V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/></svg>
+        </div>
+        <span class="logo-text">Accesorios</span>
+      </div>
+      <span class="section-title">Tu Setup Pro</span>
+    </div>
+
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-cover"><img src="/images/tecladorgb.png" alt="Teclado"></div>
+        <div class="product-info">
+          <div class="product-meta">
+            <p class="product-name">Teclado Mecánico RGB</p>
+            <p class="product-genre">Switches Red · Anti-ghosting</p>
+          </div>
+          <div class="product-right">
+            <span class="product-price">$280.000 COP</span>
+            <button class="buy-btn">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="product-section pc-theme">
+  <div class="section-header">
+    <div class="section-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+        </svg>
+      </div>
+      <span class="logo-text">PC Gaming</span>
+    </div>
+    <span class="section-title">Hardware de Elite</span>
+  </div>
+
+  <div class="product-list">
+    <div class="product-card">
+      <div class="product-cover">
+        <img src="/images/rtx-4080.png" alt="PC Gamer RTX 4080" />
+      </div>
+      <div class="product-info">
+        <div class="product-meta">
+          <p class="product-name">PC Ultra Gaming</p>
+          <p class="product-genre">RTX 4080 · 32GB RAM · Intel i9</p>
+        </div>
+        <div class="product-right">
+          <span class="product-price">$8.500.000 COP</span>
+          <button class="buy-btn">Comprar</button>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+
+<section class="product-section xbox-theme">
+    <div class="section-header">
+      <div class="section-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="#000"><path d="M20 18H4v-2h16v2Zm2-4H2V4h20v10Z"/></svg>
+        </div>
+        <span class="logo-text">Xbox Series</span>
+      </div>
+      <span class="section-title">Juegos Destacados</span>
+    </div>
+
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-cover"><img src="/images/torreRTX.png" alt="Torre RTX 4060 Ti"></div>
+        <div class="product-info">
+          <div class="product-meta">
+            <p class="product-name">Torre RTX 4060 Ti</p>
+            <p class="product-genre">Ryzen 7 · 16GB RAM · SSD 1TB</p>
+          </div>
+          <div class="product-right">
+            <span class="product-price">$4.200.000 COP</span>
+            <button class="buy-btn">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- SECCIÓN ABOUT GAMESTORE -->
     <section class="about">

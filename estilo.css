@@ -1,0 +1,436 @@
+/* ══════════════════════════════════════════
+   GAMEBYTE STORE — styles.css (Versión Optimizada)
+   ══════════════════════════════════════════ */
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #00e5ff;
+  --accent-dim: #00b8cc;
+  --bg-page: #0a0a0f;
+  --bg-card: #111118;
+  --bg-card-hover: #16161f;
+  --border: #1f1f2e;
+  --border-hover: #2e2e42;
+  --text-primary: #ffffff;
+  --text-secondary: #8888a8;
+  --text-muted: #555570;
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+/* ── CONFIGURACIÓN DE TEMAS (NUEVO) ── */
+.ns-theme  { --brand-color: #e4000f; } /* Rojo Nintendo */
+.pc-theme  { --brand-color: #2b16ec; } /* Azul PC/Nvidia */
+.acc-theme { --brand-color: #bf7e05; } /* Naranja Accesorios */
+.xbox-theme { --brand-color: #107c10; }
+    
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════ */
+.header {
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo-img { height: 100px; width: auto; object-fit: contain; }
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.logo-accent { color: var(--accent); }
+
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 7px 13px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-btn:hover { color: var(--text-primary); background: #1a1a2a; }
+.nav-btn.active { color: var(--accent); }
+
+.header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.btn-login {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bbb;
+  border: 1px solid #2a2a3a;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-login:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+.btn-cart {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid #2a2a3a;
+  border-radius: var(--radius-sm);
+  color: #bbb; transition: 0.15s;
+}
+.cart-badge {
+  position: absolute; top: -7px; right: -7px;
+  background: var(--accent); color: #000;
+  font-size: 9px; font-weight: 700;
+  width: 17px; height: 17px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ══════════════════════════════════════════
+   CARRUSEL
+   ══════════════════════════════════════════ */
+.carousel-section { padding: 2.5rem 2rem; max-width: 1400px; margin: 0 auto; }
+.carousel-wrapper { overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.game-slide { min-width: 100%; box-sizing: border-box; }
+.slide-inner { display: flex; flex-direction: column; background: var(--bg-card); }
+.slide-image-wrap { position: relative; height: 340px; background: #05050f; overflow: hidden; }
+.slide-image-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88; transition: 0.6s ease; }
+.slide-image-wrap:hover img { transform: scale(1.03); opacity: 1; }
+.console-badge {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px; padding: 5px 12px;
+  font-family: var(--font-display); font-size: 10px; color: #ccc;
+}
+.slide-body { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+.slide-title { font-family: var(--font-display); font-size: 18px; color: var(--text-primary); }
+.slide-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.slide-price { font-family: var(--font-display); font-size: 20px; color: var(--accent); }
+.buy-btn {
+  background: var(--accent); color: #000; border: none;
+  font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  padding: 10px 24px; border-radius: var(--radius-sm); cursor: pointer;
+  transition: 0.15s; text-transform: uppercase;
+}
+.buy-btn:hover { background: var(--accent-dim); }
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1.25rem;
+}
+
+.ctrl-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #2a2a3a;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a2a3a;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+/* ══════════════════════════════════════════
+   SECCIÓN DE PRODUCTOS (RE-ESTRUCTURADA Y LIMPIA)
+   ══════════════════════════════════════════ */
+.product-section {
+  padding: 40px 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header con color de marca dinámico */
+.section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+
+.section-logo {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--brand-color, var(--accent)); /* Usa el color del tema */
+  padding: 6px 14px 6px 8px; border-radius: 24px;
+}
+
+.logo-icon {
+  width: 22px; height: 22px; background: #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.logo-text {
+  font-family: var(--font-display); font-size: 10px;
+  font-weight: 600; color: rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-family: var(--font-display); font-size: 13px;
+  font-weight: 600; color: var(--text-secondary);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* Lista y Cards */
+.product-list { display: flex; flex-direction: column; gap: 14px; }
+
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden; display: flex;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.product-card:hover {
+  border-color: var(--brand-color); /* Color dinámico al pasar el mouse */
+  transform: translateX(4px);
+}
+
+.product-cover { width: 100px; flex-shrink: 0; overflow: hidden; background: #0d0d1a; }
+.product-cover img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.product-card:hover .product-cover img { transform: scale(1.06); }
+
+.product-info {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; flex: 1; gap: 16px; border-left: 1px solid var(--border);
+}
+
+.product-name {
+  font-family: var(--font-display); font-size: 12px;
+  font-weight: 600; color: var(--text-primary);
+}
+
+.product-genre { font-size: 11px; color: var(--text-secondary);}
+
+
+    /* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 12px;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .nav-btn {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  .slide-image-wrap {
+    height: 220px;
+  }
+
+  .slide-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+  }
+
+  .buy-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .carousel-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════
+   SECCIÓN ABOUT — GAMESTORE
+   ══════════════════════════════════════════ */
+
+.about {
+  background: #000;
+  padding: 72px 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: 'GAMESTORE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.1em;
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tag-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 36px;
+}
+
+.tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.tag-text {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.headline span {
+  color: var(--accent);
+}
+
+.headline-sub {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 36px;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.9;
+  max-width: 700px;
+}
+
+.body-text strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.body-text .highlight {
+  color: var(--accent);
+  font-weight: 500;
+} 
