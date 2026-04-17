@@ -115,6 +115,27 @@ a {
   flex-shrink: 0;
 }
 
+.btn-signin {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--accent); /* Tu cian corporativo */
+  color: rgb(11, 11, 18);   /* Color oscuro de fondo para contraste */
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  transition: all 0.2s ease;
+}
+
+.btn-signin:hover {
+  background: transparent;
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+}
+
 .btn-login {
   font-family: var(--font-display);
   font-size: 10px;
@@ -168,6 +189,9 @@ a {
   justify-content: center;
   font-family: sans-serif;
   line-height: 1;
+  min-width: 17px; /* Cambia width por min-width */
+  padding: 2px;    /* Dale un poquito de espacio interno */
+  transition: transform 0.2s ease; /* Necesario para la animación del JS */
 }
 
 .carousel-section {
@@ -822,4 +846,31 @@ a {
   border-color: rgb(0, 229, 255);
   color: rgb(0, 229, 255);
   background: rgba(0, 229, 255, 0.08);
+}
+
+/* BOTÓN AGREGAR AL CARRITO */
+
+.ns-btn-cart {
+  background: transparent;
+  border: none;         /* Eliminamos el marco */
+  color: var(--accent); /* Mantenemos el cian */
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;      /* Aumentamos un poco el tamaño del icono para que sea fácil de clickear */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Habilitamos el movimiento libre */
+  right: 7px;        /* Lo "empujamos" 12px desde la derecha hacia la izquierda */
+}
+
+.ns-btn-cart:hover {
+  color: #fff;          /* Cambia a blanco al pasar el mouse para feedback visual */
+  transform: scale(1.2); /* Un ligero aumento de tamaño en lugar de fondo sólido */
+  filter: drop-shadow(0 0 5px var(--accent)); /* Un sutil brillo cian */
+}
+
+.ns-btn-cart:active {
+  transform: scale(0.9);
 }
