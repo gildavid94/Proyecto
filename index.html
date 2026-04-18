@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameByte Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="images/LogoColor.png"
+            alt="GameByte Store"
+            class="logo-img"
+          />
+          <span class="logo-text">
+            GAMEBYTE<span class="logo-accent">STORE</span></span
+          >
+        </a>
+
+        <nav class="nav">
+          <a href="#ps5" class="nav-btn">PS5</a>
+          <a href="#xbox" class="nav-btn">Xbox Series</a>
+          <a href="#nintendo" class="nav-btn">Nintendo</a>
+          <a href="#pc" class="nav-btn">PC</a>
+          <a href="#accesorios" class="nav-btn">Accesorios</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn-login">Login</a>
+          <a href="javascript:void(0)" class="btn-cart" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- CARRUSEL -->
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="track">
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/God.webp" alt="God of War Ragnarok" />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">God of War Ragnarok</p>
+                <p class="slide-meta">
+                  Acción · Aventura · PlayStation Studios
+                </p>
+                <p class="slide-price">$189.900 COP</p>
+                <button
+                  class="buy-btn"
+                  onclick="
+                    agregarAlCarrito(
+                      'God Of War Ragnarok',
+                      189900,
+                      'images/God.webp',
+                    )
+                  "
+                >
+                  Comprar ahora
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="/images/Halo.webp" alt="Halo Infinite" />
+                <span class="console-badge">Xbox</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Halo Infinite</p>
+                <p class="slide-meta">FPS · Multijugador · 343 Industries</p>
+                <p class="slide-price">$149.900 COP</p>
+                <button
+                  class="buy-btn"
+                  onclick="
+                    agregarAlCarrito(
+                      'Halo Infinite',
+                      149900,
+                      'images/Halo.webp',
+                    )
+                  "
+                >
+                  Comprar ahora
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="/images/zeldagame.png" alt="Zelda" />
+                <span class="console-badge">Nintendo Switch</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Zelda: Tears of the Kingdom</p>
+                <p class="slide-meta">Aventura · RPG · Nintendo</p>
+                <p class="slide-price">$219.900 COP</p>
+                <button
+                  class="buy-btn"
+                  onclick="
+                    agregarAlCarrito(
+                      'Zelda: Tears of the Kingdom',
+                      219900,
+                      'images/zeldagame.png',
+                    )
+                  "
+                >
+                  Comprar ahora
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="images/Spider.webp" alt="Spider-Man" />
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Marvel's Spider-Man Remastered</p>
+                <p class="slide-meta">
+                  Acción · Mundo abierto · Insomniac Games
+                </p>
+                <p class="slide-price">$99.900 COP</p>
+                <button
+                  class="buy-btn"
+                  onclick="
+                    agregarAlCarrito(
+                      'Marvel\'s Spider-Man',
+                      99900,
+                      'images/Spider.webp',
+                    )
+                  "
+                >
+                  Comprar ahora
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="prev">&#8592;</button>
+        <div class="dots" id="dots"></div>
+        <button class="ctrl-btn" id="next">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PRODUCTOS-->
+
+    <section class="product-section ns-theme" id="nintendo">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-solid fa-gamepad"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">Nintendo Switch</span>
+        </div>
+        <span class="section-title">Juegos destacados</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/CyberPunknintendo.webp" alt="Cyberpunk" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">Cyberpunk 2077</p>
+              <p class="product-genre">Aventura · RPG · Nintendo</p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$219.900 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Cyberpunk 2077',
+                    219900,
+                    'images/CyberPunknintendo.webp',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section pc-theme" id="pc">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-solid fa-desktop"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">PC Gaming</span>
+        </div>
+        <span class="section-title">Hardware de Elite</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/torreRTX.png" alt="Torre RTX 4060 Ti" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">Torre RTX 4060 Ti</p>
+              <p class="product-genre">Ryzen 7 · 16GB RAM · SSD 1TB</p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$4.200.000 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Torre RTX 4060 Ti',
+                    4200000,
+                    'images/torreRTX.png',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section acc-theme" id="accesorios">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-solid fa-headset"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">Accesorios</span>
+        </div>
+        <span class="section-title">Tu Setup Pro</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/tecladorgb.png" alt="Teclado" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">Teclado Mecánico RGB</p>
+              <p class="product-genre">Switches Red · Anti-ghosting</p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$280.000 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Teclado Mecanico RGB',
+                    280000,
+                    'images/tecladorgb.png',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section pc-theme" id="pc">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-solid fa-desktop"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">PC Gaming</span>
+        </div>
+        <span class="section-title">Hardware de Elite</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/rtx-4080.png" alt="PC Gamer RTX 4080" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">PC Ultra Gaming</p>
+              <p class="product-genre">RTX 4080 · 32GB RAM · Intel i9</p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$8.500.000 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Pc Ultra Gaming',
+                    8500000,
+                    'images/rtx-4080.png',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section ps5-theme" id="ps5">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-brands fa-playstation"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">Play Station 5</span>
+        </div>
+        <span class="section-title">Juegos Destacados</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/spider2.png" alt="Spider-man 2" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">Marvel's Spider-Man 2</p>
+              <p class="product-genre">Acción · Aventura · Insomniac Games</p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$299.000 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Marvel\'s Spider-Man',
+                    99900,
+                    'images/Spider.webp',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section xbox-theme" id="xbox">
+      <div class="section-header">
+        <div class="section-logo">
+          <div class="logo-icon">
+            <i
+              class="fa-brands fa-xbox"
+              style="color: var(--brand-color); font-size: 1.2rem"
+            ></i>
+          </div>
+          <span class="logo-text">Xbox Series</span>
+        </div>
+        <span class="section-title">Juegos Destacados</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <div class="product-cover">
+            <img src="/images/Forza_Horizon_6_XSX.png" alt="ForzaHorizon5" />
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <p class="product-name">Forza Horizon 6</p>
+              <p class="product-genre">
+                Carreras · Mundo Abierto · Playground Games
+              </p>
+            </div>
+            <div class="product-right">
+              <span class="product-price">$239.900 COP</span>
+              <button
+                class="buy-btn"
+                onclick="
+                  agregarAlCarrito(
+                    'Forza Horizon 6',
+                    239900,
+                    'images/Forza_Horizon_6_XSX.png',
+                  )
+                "
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ABOUT GAMESTORE -->
+    <section class="about">
+      <div class="about-inner">
+        <div class="tag-line">
+          <span class="tag-dot"></span>
+          <span class="tag-text">Colombia · Desde 2026</span>
+        </div>
+
+        <p class="headline">Somos <span>GameByte Store</span>.</p>
+        <p class="headline-sub">Juega mas alla de los limites.</p>
+
+        <div class="divider"></div>
+
+        <p class="body-text">
+          Nacimos en <strong>Colombia en 2026</strong> con una misión clara:
+          llevarle a cada gamer del país la mejor experiencia de compra en
+          videojuegos, consolas y accesorios. No somos solo una tienda — somos
+          <span class="highlight">la comunidad gamer colombiana</span> que
+          estaba esperando existir.<br /><br />
+          En GameByte Store encontrarás los títulos más recientes para
+          <strong>PS5, Xbox, Nintendo Switch y PC</strong>, con precios justos,
+          stock actualizado y las
+          <span class="highlight">últimas noticias del mundo gamer</span>
+          para que nunca te pierdas un lanzamiento, una actualización o una
+          oferta épica.
+        </p>
+      </div>
+    </section>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Tu Carrito</h3>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+      </div>
+
+      <div id="cart-items-container">
+        <p class="empty-msg">Tu carrito está vacío</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-amount">$0.00</span>
+        </div><br>
+
+        <button class="buy-btn" onclick="abrirCheckout()">
+          Finalizar Compra
+        </button><br><br>
+         <button onclick="vaciarCarrito()" class="clear-cart-btn">
+          <i class="fas fa-trash-alt"></i> Vaciar Carrito
+        </button>
+      </div>
+    </div>
+
+    /// Modal Carrito de compras///
+    <div id="checkout-modal" class="modal-hidden">
+      <div class="modal-content">
+        <h3>Finalizar Compra</h3>
+        <p class="modal-subtitle">
+          Estás comprando como <strong>Invitado</strong>
+        </p>
+
+        <form id="guest-form">
+          <div class="input-group">
+            <label>Nombre Completo</label>
+            <input
+              type="text"
+              id="guest-name"
+              placeholder="Ej: Nombre(s) Apellido(s)"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Correo Electrónico</label>
+            <input
+              type="email"
+              id="guest-email"
+              placeholder="tu@correo.com"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Dirección de Envío</label>
+            <input
+              type="text"
+              id="guest-address"
+              placeholder="Calle, Carrera, Apto..."
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="buy-btn"
+            style="width: 100%; margin-top: 10px"
+          >
+            Pagar Ahora
+          </button>
+        </form>
+
+        <div id="post-purchase-options" class="modal-hidden">
+          <p
+            style="
+              text-align: center;
+              color: var(--accent);
+              margin-bottom: 15px;
+            "
+          >
+            ¡Gracias por tu compra!
+          </p>
+          <button class="nav-btn" style="width: 100%; margin-bottom: 10px">
+            Crear cuenta con estos datos
+          </button>
+          <button
+            id="btn-otra-compra"
+            type="button"
+            onclick="window.resetearCheckout()"
+            class="close-btn modal-hidden"
+            style="margin-bottom: 10px"
+          >
+            Realizar otra compra
+          </button>
+        </div>
+
+        <button
+          type="button"
+          onclick="window.cerrarModal()"
+          class="close-btn"
+          style="width: 100%; margin-top: 10px"
+        >
+          Cancelar / Cerrar
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
