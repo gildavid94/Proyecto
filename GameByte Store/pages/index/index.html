@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameByte Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&family=Exo+2&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="../../images/LogoColor.png" alt="GameByte Store" class="logo-img"/>
+          <span class="logo-text"> 
+            GAMEBYTE<span class="logo-accent">STORE</span></span>
+        </a>
+        
+        <nav class="nav">
+          <a href="#playstation" class="nav-btn active">PlayStation</a>
+          <a href="#xbox" class="nav-btn">Xbox</a>
+          <a href="#nintendo" class="nav-btn">Nintendo</a>
+          <a href="#pc" class="nav-btn">PC</a>
+          <a href="#accesorios" class="nav-btn">Accesorios</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="#signin" class="btn-signin">Sign In</a>
+          <a href="#login" class="btn-login">Login</a>
+          <a href="#carrito" class="btn-cart">
+             <i class="fa-solid fa-cart-shopping"></i>
+             <span class="cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+git 
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="track">
+          
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="../../images/God.webp" alt="God of War Ragnarok"/>
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">God of War Ragnarok</p>
+                <p class="slide-meta"> Acción · Aventura · PlayStation Studios</p>
+                <p class="slide-price">$189.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="../../images/Mario.webp" alt="Mario & Luigi: Brothership"/>
+                <span class="console-badge">Nintendo Switch</span> 
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Mario & Luigi: Brothership</p>
+                <p class="slide-meta">Aventura · Plataforma · Nintendo</p>
+                <p class="slide-price">$149.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="../../images/Zelda.webp" alt="Zelda"/>
+                <span class="console-badge">Nintendo Switch</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Zelda: Tears of the Kingdom</p>
+                <p class="slide-meta">Aventura · RPG · Nintendo</p>
+                <p class="slide-price">$219.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-slide">
+            <div class="slide-inner">
+              <div class="slide-image-wrap">
+                <img src="../../images/Spider.webp" alt="Spider-Man"/>
+                <span class="console-badge">PS5</span>
+              </div>
+              <div class="slide-body">
+                <p class="slide-title">Marvel's Spider-Man Remastered</p>
+                <p class="slide-meta"> Acción · Mundo abierto · Insomniac Games </p>
+                <p class="slide-price">$99.900 COP</p>
+                <button class="btn-comprar">Comprar ahora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="dots" id="dots"></div>
+        <button class="ctrl-btn" id="next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <script>
+      const track = document.getElementById("track");
+      const dotsEl = document.getElementById("dots");
+      const slides = track.querySelectorAll(".game-slide");
+      let current = 0;
+
+      slides.forEach((_, i) => {
+        const d = document.createElement("button");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.onclick = () => goTo(i);
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dotsEl
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i === current));
+      }
+
+      document.getElementById("prev").onclick = () => goTo(current - 1);
+      document.getElementById("next").onclick = () => goTo(current + 1);
+
+      let autoplay = setInterval(() => goTo(current + 1), 4000);
+      track.addEventListener("mouseenter", () => clearInterval(autoplay));
+      track.addEventListener("mouseleave", () => {
+        autoplay = setInterval(() => goTo(current + 1), 4000);
+      });
+    </script>
+    </section>
+    
+    <section class="ns-section">
+      <div class="ns-header">
+        <div class="ns-logo">
+          <div class="ns-logo-icon">
+            <svg viewBox="0 0 13 13" fill="none">
+              <rect
+              x="1"
+              y="3"
+              width="5"
+              height="7"
+              rx="2.5"
+              fill="rgb(228, 0, 15)"/>
+              <rect
+              x="7"
+              y="3"
+              width="5"
+              height="7"
+              rx="2.5"
+              fill="rgb(0, 115, 207)"/>
+            </svg>
+          </div>
+          <span class="ns-logo-text">Nintendo Switch</span>
+        </div>
+        <span class="ns-title">Juegos destacados</span>
+      </div>
+
+      <div class="ns-list">
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/CyberPunknintendo.webp" alt="Cyberpunk 2077"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Cyberpunk 2077</p>
+              <p class="ns-genre">Aventura · RPG · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 219.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/MarioBros.webp" alt="Mario Bros"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Mario Bros</p>
+              <p class="ns-genre">Plataforma · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 149.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/FinalFantasynintendo.webp" alt="Final Fantasy"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Final Fantasy</p>
+              <p class="ns-genre">RPG · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 189.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/FirstLightnintendo.webp" alt="First Light 007"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">First Light 007</p>
+              <p class="ns-genre">Acción · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 179.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/Outboundnintendo.webp" alt="Outbound"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Outbound</p>
+              <p class="ns-genre">Acción · Aventura · Nintendo</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 159.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="about">
+      <div class="about-inner">
+        <div class="tag-line">
+          <span class="tag-dot"></span>
+          <span class="tag-text">Colombia · Desde 2026</span>
+        </div>
+        
+        <p class="headline">Somos <span>GameByte Store</span>.</p>
+        <p class="headline-sub">Juega mas alla de los limites.</p>
+        
+        <div class="divider"></div>
+        
+        <p class="body-text">
+          Nacimos en <strong>Colombia en 2026</strong> con una misión clara:
+          llevarle a cada gamer del país la mejor experiencia de compra en
+          videojuegos, consolas y accesorios. No somos solo una tienda — somos
+          <span class="highlight">la comunidad gamer colombiana</span> que
+          estaba esperando existir.<br /><br />
+          En GameByte Store encontrarás los títulos más recientes para
+          <strong>PS5, Xbox, Nintendo Switch y PC</strong>, con precios justos,
+          stock actualizado y las
+          <span class="highlight">últimas noticias del mundo gamer</span>
+          para que nunca te pierdas un lanzamiento, una actualización o una
+          oferta épica.
+        </p>
+      </div>
+    </section>
+    
+    <section class="ns-section">
+      <div class="ns-header">
+        <div class="ns-logo">
+          <div class="ns-logo-icon">
+            <svg viewBox="0 0 13 13" fill="none">
+              <rect
+              x="1"
+              y="3"
+              width="5"
+              height="7"
+              rx="2.5"
+              fill="rgb(228, 0, 15)"/>
+              <rect
+              x="7"
+              y="3"
+              width="5"
+              height="7"
+              rx="2.5"
+              fill="rgb(0, 115, 207)"/>
+            </svg>
+          </div>
+          <span class="ns-logo-text">PlayStation 5</span>
+        </div>
+        <span class="ns-title">Juegos destacados</span>
+      </div>
+      
+      <div class="ns-list">
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/Cthulhups5.webp" alt="Cthulhu"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Cthulhu</p>
+              <p class="ns-genre">Aventura · RPG · PlayStation 5</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 219.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/ErebanShadowps5.webp" alt="Ereban Shadows"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Ereban Shadows</p>
+              <p class="ns-genre">Acción · Aventura · PlayStation 5</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 149.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/EtrangeOverlordps5.webp" alt="Etrange Overlord"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Etrange Overlord</p>
+              <p class="ns-genre">RPG · Aventura · PlayStation 5</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 189.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/Resident.webp" alt="Resident Evil 4 Remake"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Resident Evil 4 Remake</p>
+              <p class="ns-genre">Acción · Aventura · PlayStation 5</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 179.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ns-card">
+          <div class="ns-cover">
+            <img src="../../images/ShadowLabyrinthps5.webp" alt="Shadow Labyrinth"/>
+          </div>
+          <div class="ns-info">
+            <div class="ns-meta">
+              <p class="ns-name">Shadow Labyrinth</p>
+              <p class="ns-genre">Acción · Aventura · PlayStation 5</p>
+            </div>
+            <div class="ns-right">
+              <span class="ns-price">$ 159.900 COP</span>
+              <button class="ns-btn-cart" title="Agregar al carrito">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <footer class="ft">
+    <div class="ft-top">
+      <div class="ft-logo-col">
+        <div class="ft-logo">
+          <div class="ft-logo-icon"> 
+            <img src="../../images/LogoColor.png" alt="Logo"/>
+          </div>
+          <span class="ft-logo-name">GAMEBYTE</span>
+        </div>
+        <p class="ft-tagline">Juega Mas Alla De Los Limites</p>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Explore</p>
+        <ul class="ft-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nuevos lanzamientos</a></li>
+          <li><a href="#">Pre-ventas</a></li>
+          <li><a href="#">PlayStation</a></li>
+          <li><a href="#">Xbox</a></li>
+          <li><a href="#">Nintendo</a></li>
+          <li><a href="#">PC</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Juegos Destacados</p>
+        <ul class="ft-links">
+          <li><a href="#">Resident Evil 4 Remake</a></li>
+          <li><a href="#">Ereban Shadows</a></li>
+          <li><a href="#">Etrange Overlord</a></li>
+          <li><a href="#">Shadow Labyrinth</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Derechos</p>
+        <ul class="ft-links">
+          <li><a href="#">Politicas de privacidad</a></li>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Politica de devoluciones</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Ayuda</p>
+        <ul class="ft-links">
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ft-bottom">
+    <p class="ft-copy">&copy; 2026 Gamebyte. Todos los derechos reservados.</p>
+    <div class="ft-socials">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/main.js"></script>
+
+</body>
+</html>

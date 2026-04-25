@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameByte Admin - Gestión de Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* Estilos complementarios para el layout del Panel */
+        .admin-main {
+            padding: 40px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Reutilizamos el estilo de tus cards de la tienda */
+        .admin-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border-top: 2px solid var(--accent); /* Detalle visual de la sección 'About' */
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* Estilizamos los inputs para que coincidan con el modal de compra */
+        .admin-input {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a24 !important;
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            transition: border-color 0.3s;
+        }
+
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+        }
+
+        /* Listado de productos en el admin */
+        .inventory-scroll {
+            max-height: 700px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Scrollbar personalizado para seguir la estética */
+        .inventory-scroll::-webkit-scrollbar { width: 4px; }
+        .inventory-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        .item-admin-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #0d0d15;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+        }
+
+        .item-admin-row img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+
+        .badge-status {
+            font-size: 9px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: var(--font-display);
+            margin-left: 10px;
+        }
+
+        .badge-new { background: #00ff88; color: #000; }
+        .badge-pre { background: #ffaa00; color: #000; }
+
+        @media (max-width: 900px) {
+            .admin-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="images/LogoColor.png" alt="Logo" class="logo-img">
+                <span class="logo-text">GAMEBYTE<span class="logo-accent">ADMIN</span></span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-btn">Ver Tienda</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="tag-line" style="margin-bottom: 20px;">
+            <span class="tag-dot"></span>
+            <span class="tag-text">Panel de Control de Inventario</span>
+        </div>
+        
+        <h2 class="headline" style="margin-bottom: 40px;">Gestión de <span>Catálogo</span></h2>
+
+        <div class="admin-grid">
+            <section class="admin-card">
+                <h3 class="slide-title" style="margin-bottom: 25px; color: var(--accent);">Nuevo Lanzamiento</h3>
+                
+                <form id="admin-product-form">
+                    <div class="input-group">
+                        <label>Nombre del Título</label>
+                        <input type="text" id="p-name" class="admin-input" placeholder="Ej: Marvel's Wolverine" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Etiqueta Especial</label>
+                        <select id="p-tag" class="admin-input">
+                            <option value="none">Sin Etiqueta</option>
+                            <option value="new">Nuevo Lanzamiento</option>
+                            <option value="pre">Preventa / Reserva</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Consola / Categoría</label>
+                        <select id="p-category" class="admin-input">
+                            <option value="ps5">PlayStation 5</option>
+                            <option value="xbox">Xbox Series</option>
+                            <option value="nintendo">Nintendo Switch</option>
+                            <option value="pc">PC Gaming</option>
+                            <option value="accesorios">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Precio Unitario (COP)</label>
+                        <input type="number" id="p-price" class="admin-input" placeholder="0.00" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>URLs de Imágenes (3 requeridas)</label>
+                        <input type="url" id="img1" class="admin-input" placeholder="URL Portada Principal" required style="margin-bottom:8px">
+                        <input type="url" id="img2" class="admin-input" placeholder="URL Captura 2" required style="margin-bottom:8px">
+                        <input type="url" id="img3" class="admin-input" placeholder="URL Captura 3" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Video Trailer (URL Embed)</label>
+                        <input type="url" id="p-video" class="admin-input" placeholder="https://www.youtube.com/embed/...">
+                    </div>
+
+                    <button type="submit" class="buy-btn" style="width: 100%; margin-top: 10px;">
+                        <i class="fas fa-plus"></i> Publicar en Catálogo
+                    </button>
+                </form>
+            </section>
+
+            <!-- <section class="admin-card" style="border-top-color: var(--border);">
+                <h3 class="slide-title" style="margin-bottom: 25px;">Productos en Vivo</h3>
+<!-- Aca quiero ingresar un dashboard que muestre como las estadisticas de ventas o de usuarios que se han registrados
+<div> 
+
+</div>
+                
+                <div id="admin-inventory-list" class="inventory-scroll">
+                    <p class="body-text" style="font-size: 12px; opacity: 0.5;">No hay productos personalizados cargados aún.</p>
+                </div>
+            </section> -->
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
