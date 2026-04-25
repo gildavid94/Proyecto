@@ -36,10 +36,17 @@
           <a href="#nintendo" class="nav-btn">Nintendo</a>
           <a href="#pc" class="nav-btn">PC</a>
           <a href="#accesorios" class="nav-btn">Accesorios</a>
+          <a href="#nosotros" class="nav-btn">Nosotros</a>
         </nav>
 
         <div class="header-actions">
-          <a href="#login" class="btn-login">Login</a>
+
+          <!-- Quiero que al abrir el login me permita elegir el rol de "Cliente" o "Admin" para mostrar el formulario correspondiente. Si elijo "Admin", se muestra el formulario de admin.html que ya tienes, y si elijo "Cliente", se muestra un formulario de registro simple (nombre, email, contraseña) para crear una cuenta de cliente. Ambos formularios deben tener un botón para volver a la selección de rol. -->
+
+          <a href="javascript:void(0)" class="nav-btn" id="login-btn" onclick="toggleLogin()">
+            <i class="fa-solid fa-user"></i> Iniciar Sesión</a>
+
+
           <a href="javascript:void(0)" class="btn-cart" onclick="toggleCart()">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-badge">0</span>
@@ -438,19 +445,21 @@
     </section>
 
     <!-- SECCIÓN ABOUT GAMESTORE -->
-    <section class="about">
-      <div class="about-inner">
-        <div class="tag-line">
-          <span class="tag-dot"></span>
-          <span class="tag-text">Colombia · Desde 2026</span>
-        </div>
+    <section id="nosotros" class="about">
+  <div class="about-inner">
+    <a href="#" class="close-about">×</a>
 
-        <p class="headline">Somos <span>GameByte Store</span>.</p>
-        <p class="headline-sub">Juega mas alla de los limites.</p>
+    <div class="tag-line">
+      <span class="tag-dot"></span>
+      <span class="tag-text">Colombia · Desde 2026</span>
+    </div>
 
-        <div class="divider"></div>
+    <p class="headline">Somos <span>GameByte Store</span>.</p>
+    <p class="headline-sub">Juega mas alla de los limites.</p>
 
-        <p class="body-text">
+    <div class="divider"></div>
+
+    <p class="body-text">
           Nacimos en <strong>Colombia en 2026</strong> con una misión clara:
           llevarle a cada gamer del país la mejor experiencia de compra en
           videojuegos, consolas y accesorios. No somos solo una tienda — somos
@@ -491,7 +500,7 @@
       </div>
     </div>
 
-    /// Modal Carrito de compras///
+    /* Modal Carrito de compras*/
     <div id="checkout-modal" class="modal-hidden">
       <div class="modal-content">
         <h3>Finalizar Compra</h3>
@@ -538,7 +547,11 @@
             Pagar Ahora
           </button>
         </form>
-
+        <div class="register-container">
+    <form id="register-form" class="admin-card">
+        <h3 class="slide-title" style="color: var(--accent); margin-bottom: 25px;">Crear Cuenta Gamer</h3>
+        
+      
         <div id="post-purchase-options" class="modal-hidden">
           <p
             style="
@@ -558,8 +571,7 @@
             onclick="window.resetearCheckout()"
             class="close-btn modal-hidden"
             style="margin-bottom: 10px"
-          >
-            Realizar otra compra
+          >Realizar otra compra
           </button>
         </div>
 
