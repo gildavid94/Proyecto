@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameByte Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="images/LogoColor.png"
+            alt="GameByte Store"
+            class="logo-img"
+          />
+          <span class="logo-text">
+            GAMEBYTE STORE</span
+          >
+        </a>
+
+        <nav class="nav">
+          <a href="#ps5" class="nav-btn">PS5</a>
+          <a href="#xbox" class="nav-btn">Xbox Series</a>
+          <a href="#nintendo" class="nav-btn">Nintendo</a>
+          <a href="#pc" class="nav-btn">PC</a>
+          <a href="#accesorios" class="nav-btn">Accesorios</a>
+          <a href="#nosotros" class="nav-btn">Nosotros</a>
+        </nav>
+
+        <div class="header-actions">
+
+          <a href="#" onclick="abrirModalLogin(); return false;" class="nav-btn">
+          <i class="fas fa-user"></i> Iniciar Sesión</a>
+
+
+          <a href="javascript:void(0)" class="btn-cart" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+  </head>
+<body>
+    
+
+  <section id="nosotros" class="about">
+      
+      <div class="about-inner">
+        <div class="tag-line">
+          <span class="tag-dot"></span>
+          <span class="tag-text">Colombia · Desde 2026</span>
+        </div>
+        
+        <p class="headline">Somos <span>GameByte Store</span></p>
+        
+        <div class="divider"></div>
+        
+        <p class="body-text">
+          Nacimos en <strong>Colombia en 2026</strong> con una misión clara:
+          llevarle a cada gamer del país la mejor experiencia de compra en
+          videojuegos, consolas y accesorios. No somos solo una tienda — somos
+          <span class="highlight">la comunidad gamer colombiana</span> que
+          estaba esperando existir.<br /><br />
+          En GameByte Store encontrarás los títulos más recientes para
+          <strong>PS5, Xbox, Nintendo Switch y PC</strong>, con precios justos,
+          stock actualizado y las
+          <span class="highlight">últimas noticias del mundo gamer</span>
+          para que nunca te pierdas un lanzamiento, una actualización o una
+          oferta épica.
+        </p>
+      </div>
+    </section>
+
+    <footer class="ft">
+    <div class="ft-top">
+      <div class="ft-logo-col">
+        <div class="ft-logo">
+          <div class="ft-logo-icon"> 
+            <img src="../../images/LogoColor.png" alt="Logo"/>
+          </div>
+          <span class="ft-logo-name">GAMEBYTE STORE</span>
+        </div>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Explorar</p>
+        <ul class="ft-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Nuevos lanzamientos</a></li>
+          <li><a href="#">Pre-ventas</a></li>
+          <li><a href="#">PlayStation</a></li>
+          <li><a href="#">Xbox</a></li>
+          <li><a href="#">Nintendo</a></li>
+          <li><a href="#">PC</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Derechos</p>
+        <ul class="ft-links">
+          <li><a href="#">Politicas de privacidad</a></li>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Politica de devoluciones</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <p class="ft-col-title">Ayuda</p>
+        <ul class="ft-links">
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#" id="btn-contacto">Contacto</a>
+          <!-- Contenedor oculto para la información que inventamos -->
+          <div id="info-contacto" class="contacto-desplegable">
+            <p><a href="mailto:soporte@gamebytestore.com">
+                <i class="fa-solid fa-envelope"></i> soporte@gamebytestore.com
+              </a></p>
+            <p><a href="https://wa.me/573000602026?text=Hola%20Gamebyte%20Store,%20necesito%20soporte%20con%20un%20juego" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-phone"></i> +57 300-060-2026
+              </a></p>
+          </div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ft-bottom">
+    <p class="ft-copy">&copy; 2026 Gamebyte. Todos los derechos reservados.</p>
+    <div class="ft-socials">
+      <a href="https://www.facebook.com/login" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i><a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

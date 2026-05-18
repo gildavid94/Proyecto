@@ -244,3 +244,59 @@ window.agregarAlCarrito = function(nombre, precio, imagen) {
 };
 
 
+
+// Funciones para abrir y cerrar el modal de login
+/* --- FUNCIONES CONTROL DE ACCESO MODAL --- */
+window.abrirModalLogin = function() {
+    const modal = document.getElementById("login-modal");
+    if (modal) {
+        modal.style.display = 'flex'; // Fuerza el renderizado en pantalla
+        modal.classList.remove("modal-hidden");
+        modal.classList.add("active"); 
+    }
+};
+
+window.cerrarModalLogin = function() {
+    const modal = document.getElementById("login-modal");
+    if (modal) {
+        modal.style.display = 'none'; // Lo oculta por completo
+        modal.classList.add("modal-hidden");
+        modal.classList.remove("active"); 
+    }
+    window.location.reload();
+};
+
+document.getElementById('btn-contacto').addEventListener('click', function(e) {
+  e.preventDefault(); // Evita que la página salte al inicio por el '#' del enlace
+  const infoContacto = document.getElementById('info-contacto');
+  
+  // Alterna la clase 'activo' para mostrar u ocultar la información
+  infoContacto.classList.toggle('activo');
+});
+
+// Escuchar el envío del formulario de inicio de sesión
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
+    
+    if (loginForm) {
+        loginForm.onsubmit = function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+            
+            const usuario = document.getElementById("login-user").value.trim();
+            const contrasena = document.getElementById("login-pass").value.trim();
+            
+            // Credenciales de prueba para la entrega del proyecto
+            if (usuario === "admin" && contrasena === "1234") {
+                alert("¡Acceso concedido! Bienvenido al Panel de Control.");
+                
+                // Redirecciona al archivo de administración en la misma carpeta
+                window.location.href = "admin.html"; 
+            } else {
+                alert("Credenciales incorrectas. Intenta con admin / 1234");
+                // Limpiar el campo de contraseña por seguridad
+                document.getElementById("login-pass").value = "";
+            }
+        };
+    }
+});
+

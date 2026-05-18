@@ -9,16 +9,17 @@
   padding: 0;
 }
 
+
 :root {
-  --accent: #00e5ff;
-  --accent-dim: #00b8cc;
-  --bg-page: #0a0a0f;
+  --accent: #045671;
+  --accent-dim: #533497;
+  --bg-page: #1e1c1c;
   --bg-card: #111118;
   --bg-card-hover: #16161f;
   --border: #1f1f2e;
   --border-hover: #2e2e42;
   --text-primary: #ffffff;
-  --text-secondary: #8888a8;
+  --text-secondary: #f3f9f3;
   --text-muted: #555570;
   --font-display: 'Orbitron', sans-serif;
   --font-body: 'Exo 2', sans-serif;
@@ -53,7 +54,7 @@ a { text-decoration: none; color: inherit; }
    HEADER
    ══════════════════════════════════════════ */
 .header {
-  background: #000;
+  background: #1e1c1c;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -73,21 +74,25 @@ a { text-decoration: none; color: inherit; }
 }
 
 .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.logo-img { height: 100px; width: auto; object-fit: contain; }
+.logo-img { height: 150px; width: auto; object-fit: contain; }
 .logo-text {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: var(--text-primary);
+  color:var(--text-primary);
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
-.logo-accent { color: var(--accent); }
+.logo-section{
+  font-family: var(--font-display);
+  font-size: 15px;
 
+
+}
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav-btn {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -96,8 +101,8 @@ a { text-decoration: none; color: inherit; }
   border-radius: var(--radius-sm);
   transition: color 0.15s, background 0.15s;
 }
-.nav-btn:hover { color: var(--text-primary); background: #1a1a2a; }
-.nav-btn.active { color: var(--accent); }
+.nav-btn:hover {  background: var(--accent); color: var(--text-primary); }
+
 
 .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .btn-login {
@@ -158,9 +163,10 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-secondary);
   margin-top: 4px;
 }
-.slide-price { font-family: var(--font-display); font-size: 20px; color: var(--accent); }
+.slide-price { font-family: var(--font-display); font-size: 20px; color: var(--text-primary
+  ); }
 .buy-btn {
-  background: var(--accent); color: #000; border: none;
+  background: var(--accent); color: #ffffff; border: none;
   font-family: var(--font-display); font-size: 11px; font-weight: 600;
   padding: 10px 24px; border-radius: var(--radius-sm); cursor: pointer;
   transition: 0.15s; text-transform: uppercase;
@@ -245,11 +251,6 @@ a { text-decoration: none; color: inherit; }
   display: block;
 }
 
-.logo-text {
-  font-family: var(--font-display); font-size: 10px;
-  font-weight: 600; color: rgba(0, 0, 0, 0.8);
-  letter-spacing: 0.1em;
-}
 
 .section-title {
   font-family: var(--font-display); font-size: 13px;
@@ -258,36 +259,42 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Lista y Cards */
-.product-list { display: flex; flex-direction: column; gap: 14px; }
+.product-list { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px; /* Más espacio entre tarjetas grandes */
+}
 
 .product-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden; display: flex;
+  flex-direction: column;
   transition: border-color 0.2s, transform 0.2s;
 }
 
 .product-card:hover {
   border-color: var(--brand-color); /* Color dinámico al pasar el mouse */
-  transform: translateX(4px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.product-cover { width: 100px; flex-shrink: 0; overflow: hidden; background: #0d0d1a; }
-.product-cover img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.product-cover { width: 100%;height: 320px; overflow: hidden; background: #0d0d1a; }
+.product-cover img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; object-position: center top; }
 .product-card:hover .product-cover img { transform: scale(1.06); }
 
 .product-info {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 20px; flex: 1; gap: 16px; border-left: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;
+  padding: 20px; flex: 1; gap: 12px; border-left: none; border-top: 1px solid var(--border);
 }
 
 .product-name {
-  font-family: var(--font-display); font-size: 12px;
+  font-family: var(--font-display); font-size: 15px;
   font-weight: 600; color: var(--text-primary);
 }
 
-.product-genre { font-size: 11px; color: var(--text-secondary);}
+.product-genre { font-size: 12px; color: var(--text-secondary);}
 
 
     /* ══════════════════════════════════════════
@@ -338,130 +345,6 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
-/* ══════════════════════════════════════════
-   SECCIÓN ABOUT — GAMESTORE
-   ══════════════════════════════════════════ */
-
-.about {
-  background: #000;
-  padding: 72px 2rem;
-  position: relative;
-  overflow: ;
-}
-
-.about::before {
-  content: 'GAMESTORE';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: 120px;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
-  white-space: nowrap;
-  pointer-events: none;
-  letter-spacing: 0.1em;
-}
-
-.about-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.tag-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  border-radius: 30px;
-  padding: 6px 16px;
-  margin-bottom: 36px;
-}
-
-.tag-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.tag-text {
-  font-family: var(--font-display);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.headline {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 5vw, 52px);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  margin-bottom: 8px;
-}
-
-.headline span {
-  color: var(--accent);
-}
-
-.headline-sub {
-  font-family: var(--font-display);
-  font-size: clamp(14px, 2.5vw, 22px);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.25);
-  letter-spacing: 0.06em;
-  margin-bottom: 40px;
-}
-
-.divider {
-  width: 60px;
-  height: 2px;
-  background: var(--accent);
-  margin-bottom: 36px;
-}
-
-.body-text {
-  font-size: 16px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.9;
-  max-width: 700px;
-}
-
-.body-text strong {
-  color: #fff;
-  font-weight: 500;
-}
-
-.body-text .highlight {
-  color: var(--accent);
-  font-weight: 500;
-} 
-
-/* Clase para ocultar secciones */
-.section-hidden {
-  display: none !important;
-}
-
-/* Opcional: Para que la transición no sea tan brusca */
-.product-section {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
 /*Modal Carrito de Compras*/
 
 .modal-hidden { display: none !important; }
@@ -511,6 +394,33 @@ a { text-decoration: none; color: inherit; }
     color: var(--accent); /* El color brillante de tu tienda */
 }
 
+/* Modificación exclusiva del botón Crear Cuenta en el Checkout */
+#checkout-modal .btn-crear-cuenta-gamer {
+    background: var(--accent);
+    color: #ffffff;
+    border: 1px solid transparent;
+    padding: 10px 24px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Efecto al pasar el mouse por encima (Hover) */
+#checkout-modal .btn-crear-cuenta-gamer:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+/* Efecto al presionarlo (Active) */
+#checkout-modal .btn-crear-cuenta-gamer:active {
+    transform: scale(0.98);
+}
 
 /* Estilo para el botón Cancelar del Modal */
 .close-btn {
@@ -636,48 +546,531 @@ a { text-decoration: none; color: inherit; }
     background: var(--bg-card);
 }
 
-/*Ocultar Seccion Nosotros del index*/
+/* ══════════════════════════════════════════
+   SECCIÓN ABOUT — GAMEBYTE STORE (CORREGIDO)
+   ══════════════════════════════════════════ */
 
-
-/* 1. Estado inicial: Totalmente oculta */
-.about {
-    display: none; /* No ocupa espacio ni se ve */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    background: var(--bg-card);
-    padding: 80px 20px;
-    border-top: 2px solid var(--accent);
+/* 1. Estado inicial: Usamos el ID para asegurar que se oculte por completo */
+/* Corrección para la página independiente de Nosotros */
+.about-page-container {
+  background: #0d0d11; /* El fondo oscuro de tu tienda */
+  padding: 80px 2rem;
+  position: relative;
+  min-height: 80vh; /* Asegura que cubra el fondo si hay poco texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 2. El "Interruptor" de CSS: Cuando el ID es el objetivo (Target) */
-.about:target {
-    display: block; /* Aparece en el flujo del documento */
-    opacity: 1;
-    transform: translateY(0);
+/* Tu marca de agua original (opcional, se ve genial de fondo) */
+.about-page-container::before {
+  content: 'GAMEBYTE STORE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.015);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.1em;
 }
 
-/* 3. Estilo del botón de cerrar (la "X") */
+/* 2. El Interruptor Activo: Se muestra SOLO cuando se presiona el botón */
+#nosotros.about:target {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+/* 3. Estilos internos que ya tenías (se mantienen igual) */
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tag-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 36px;
+}
+
+.tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.tag-text {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.headline span { color: var(--accent); }
+
+.headline-sub {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 36px;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.9;
+  max-width: 700px;
+}
+
+.body-text strong { color: #fff; font-weight: 500; }
+.body-text .highlight { color: var(--accent); font-weight: 500; } 
+
+/* Botón de cerrar (la X) posicionado correctamente */
 .close-about {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2.5rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+  line-height: 1;
+  z-index: 10;
 }
 
-.close-about:hover {
-    color: var(--accent);
-}
+.close-about:hover { color: var(--accent); }
 
-/* Animación opcional para que entre suave */
+/* Animación de entrada */
 @keyframes fadeInSlide {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.about:target {
-    animation: fadeInSlide 0.5s ease-out forwards;
+/*-- MODAL DE INICIO DE SESIÓN --*/
+
+/* Cuando el modal tiene la clase active, se transforma en un contenedor flexible en pantalla completa */
+#login-modal.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(6px); /* Desenfoque de fondo */
+    z-index: 4000; /* Por encima de todo el contenido */
+    
+    /* Centrado de la tarjeta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Forzar que se oculte si no está activo, ganándole a las clases genéricas por especificidad de ID */
+#login-modal:not(.active) {
+    display: none;
+}
+
+/* Ajustes a la tarjeta interna para remover estilos en línea pesados */
+#login-modal .admin-card {
+    background: #111116; 
+    border: 1px solid var(--accent); 
+    box-shadow: 0 0 25px rgba(4, 86, 113, 0.3); 
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0; /* Cancela el margen que lo tiraba hacia abajo */
+}
+
+.close-x {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4); /* Color gris tenue inicial */
+    font-size: 2rem; /* Tamaño grande y elegante */
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0;
+    width: auto; /* Evita que se estire al 100% */
+}
+
+/* Efecto Hover: se ilumina con el color de tu tienda y gira sutilmente */
+.close-x:hover {
+    color: var(--accent); /* Cambia al azul/celeste de tu marca */
+    transform: scale(1.1);
+}
+
+.stock-btn {
+    transition: transform 0.1s ease, opacity 0.2s;
+}
+.stock-btn:hover {
+    transform: scale(1.2);
+}
+.stock-btn:active {
+    transform: scale(0.9);
+}
+
+/*Seccion Footer*/
+
+/* --- ESTILOS GENERALES DEL FOOTER --- */
+.ft {
+  background-color: #121214; /* Fondo oscuro gamer */
+  color: #e1e1e6; /* Texto claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 40px 20px 40px;
+  margin-top: 50px; /* Separación del contenido superior */
+}
+
+/* --- SECCIÓN SUPERIOR (COLUMNAS) --- */
+.ft-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el contenido en pantallas grandes */
+}
+
+/* Columna del Logo y Tagline */
+.ft-logo-col {
+  flex: 1 1 250px; /* Le da un poco más de espacio a la marca */
+}
+
+.ft-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.ft-logo-icon img {
+  width: 250px; /* Ajusta el tamaño de tu logo */
+  height: auto;
+  display: block;
+}
+
+.ft-logo-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+ 
+}
+
+.ft-tagline {
+  font-size: 0.9rem;
+  color: #a4a4a4;
+  font-style: italic;
+}
+
+/* Estilos para el resto de las columnas */
+.ft-top > div:not(.ft-logo-col) {
+  flex: 1 1 160px; /* Columnas adaptables */
+}
+
+.ft-col-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #045671; /* Detalle de color al lado del título */
+  padding-left: 8px;
+}
+
+/* Listas de enlaces */
+.ft-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ft-links li {
+  margin-bottom: 12px;
+}
+
+.ft-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Efecto Hover en los enlaces */
+.ft-links a:hover {
+  color: #533497; /* Color de acento al pasar el mouse */
+  transform: translateX(5px); /* Pequeño desplazamiento hacia la derecha */
+}
+
+/* --- SECCIÓN INFERIOR (COPYRIGHT Y REDES) --- */
+.ft-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #045671; /* Línea divisoria sutil */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ft-copy {
+  font-size: 0.85rem;
+  color: #737380;
+}
+
+/* Iconos de Redes Sociales */
+.ft-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.ft-socials a {
+  color: #a4a4a4;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ft-socials a:hover {
+  color: #fff;
+  transform: translateY(-3px); /* Pequeño brinco hacia arriba */
+}
+
+/* --- RESPONSIVE / DISEÑO MÓVIL --- */
+@media (max-width: 768px) {
+  .ft {
+    padding: 40px 20px 20px 20px;
+  }
+  
+  .ft-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Estilo del contenedor de contacto (oculto al inicio) */
+.contacto-desplegable {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-top: 0;
+  opacity: 0;
+}
+
+/* Clase que se activará con JavaScript */
+.contacto-desplegable.activo {
+  max-height: 100px; /* Espacio suficiente para los dos renglones */
+  margin-top: 10px;
+  opacity: 1;
+}
+
+.contacto-desplegable p {
+  font-size: 0.85rem;
+  color: #ffffff; /* Color de acento para que resalte, puedes cambiarlo */
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- CONTENEDOR PRINCIPAL ESTADISTICAS ADMIN --- */
+.admin-dashboard {
+  background-color: #1a1a1e;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 40px auto;
+  font-family: var(--font-display);
+  color: #fff;
+}
+
+.dash-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+}
+
+/* --- TARJETAS KPI --- */
+.dash-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card-kpi {
+  background-color: #121214;
+  border: 1px solid #29292e;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-kpi:hover {
+  transform: translateY(-5px);
+  border-color: #ffffff;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.card-info h3 {
+  font-size: 0.9rem;
+  color: #a4a4a4;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.card-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.card-sub {
+  font-size: 0.8rem;
+  color: #737380;
+}
+
+.card-sub.positivo {
+  color: #2ed573; /* Verde para indicar crecimiento */
+}
+
+/* --- SECCIÓN INFERIOR: GRÁFICO Y TOP --- */
+.dash-content {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.dash-chart-box {
+  background-color: #121214;
+  border: 1px solid #29292e;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 2 1 550px;
+  position: relative;
+  min-width: 0;       
+  width: 100%;
+}
+
+.dash-top-products {
+  background-color: #121214;
+  border: 1px solid #29292e;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px;
+}
+
+.dash-chart-box h3, .dash-top-products h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #e1e1e6;
+}
+
+/* LISTA TOP MÁS VENDIDOS */
+.top-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #29292e;
+}
+
+.top-list li:last-child {
+  border-bottom: none;
+}
+
+.rank {
+  background-color: #045761;
+  color: white;
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.prod-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.prod-sales {
+  font-size: 0.8rem;
+  color: #a4a4a4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .dash-content {
+    flex-direction: column;
+  }
 }

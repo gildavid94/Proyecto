@@ -114,8 +114,8 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="images/LogoColor.png" alt="Logo" class="logo-img">
-                <span class="logo-text">GAMEBYTE<span class="logo-accent">ADMIN</span></span>
+                <a href="index.html"><img src="images/LogoColor.png" alt="Logo" class="logo-img" href="index.html"></a>
+                <span class="logo-text">GAMEBYTE-<span class="logo-accent">ADMIN</span></span>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-btn">Ver Tienda</a>
@@ -184,20 +184,87 @@
                 </form>
             </section>
 
-            <!-- <section class="admin-card" style="border-top-color: var(--border);">
-                <h3 class="slide-title" style="margin-bottom: 25px;">Productos en Vivo</h3>
-<!-- Aca quiero ingresar un dashboard que muestre como las estadisticas de ventas o de usuarios que se han registrados
-<div> 
-
-</div>
-                
-                <div id="admin-inventory-list" class="inventory-scroll">
-                    <p class="body-text" style="font-size: 12px; opacity: 0.5;">No hay productos personalizados cargados aún.</p>
-                </div>
-            </section> -->
+            <section class="admin-card">
+                <h3 class="slide-title" style="margin-bottom: 25px; color: var(--accent);">Productos en Catálogo</h3>
+                <div class="inventory-scroll" id="admin-inventory-list">
+                    </div>
+            </section>
         </div>
     </main>
 
+    <div class="admin-dashboard">
+  <h2 class="dash-title">Panel de Estadísticas de Ventas</h2>
+  
+  <!-- CARDS DE RESUMEN (KPIs) -->
+  <div class="dash-cards">
+    <div class="card-kpi">
+      <div class="card-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+      <div class="card-info">
+        <h3>Ingresos Mensuales</h3>
+        <p class="card-value">$4,850,000</p>
+        <span class="card-sub positivo">+15% vs mes anterior</span>
+      </div>
+    </div>
+
+    <div class="card-kpi">
+      <div class="card-icon"><i class="fa-solid fa-gamepad"></i></div>
+      <div class="card-info">
+        <h3>Juegos Vendidos</h3>
+        <p class="card-value">142</p>
+        <span class="card-sub">Este mes</span>
+      </div>
+    </div>
+
+    <div class="card-kpi">
+      <div class="card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+      <div class="card-info">
+        <h3>Ticket Promedio</h3>
+        <p class="card-value">$34,150</p>
+        <span class="card-sub">Por transaccion</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN GRÁFICO Y TOP JUEGOS -->
+  <div class="dash-content">
+    <!-- Contenedor del Gráfico -->
+    <div class="dash-chart-box">
+      <h3>Historial de Ventas (Últimos 6 meses)</h3>
+      <canvas id="ventasChart"></canvas>
+    </div>
+
+    <!-- Lista de Más Vendidos -->
+    <div class="dash-top-products">
+      <h3>Top 3 Más Vendidos</h3>
+      <ul class="top-list">
+        <li>
+          <span class="rank">1</span>
+          <div class="prod-details">
+            <span class="prod-name">Resident Evil 4 Remake</span>
+            <span class="prod-sales">54 unidades</span>
+          </div>
+        </li>
+        <li>
+          <span class="rank">2</span>
+          <div class="prod-details">
+            <span class="prod-name">Shadow Labyrinth</span>
+            <span class="prod-sales">41 unidades</span>
+          </div>
+        </li>
+        <li>
+          <span class="rank">3</span>
+          <div class="prod-details">
+            <span class="prod-name">Ereban Shadows</span>
+            <span class="prod-sales">28 unidades</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="productos.js"></script>
     <script src="admin.js"></script>
 </body>
 </html>
