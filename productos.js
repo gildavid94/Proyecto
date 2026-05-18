@@ -106,7 +106,7 @@ if (!productos) {
         genero: "Acción · Aventura · Insomniac Games",
         precioTexto: "$299.000 COP",
         precioValor: 299000,
-        imagen: "images/spider2.png",
+        imagen: "images/spiderman2.png",
         stock: 8,
         tag: "none"
       },
