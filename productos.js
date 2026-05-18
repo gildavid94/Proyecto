@@ -30,7 +30,7 @@ if (!productos) {
         genero: "Plataformas · Familiar · Nintendo",
         precioTexto: "$249.900 COP",
         precioValor: 249900,
-        imagen:"/images/marioswitch.jpg",
+        imagen:"/images/MarioBros.webp",
         stock: 3, 
         tag: "new"
       }
@@ -52,7 +52,7 @@ if (!productos) {
         genero: "RTX 4080 · 32GB RAM · Intel i9",
         precioTexto: "$8.500.000 COP",
         precioValor: 8500000,
-        imagen: "images/rtx4080.jpg",
+        imagen: "images/pcgaming.png",
         stock: 20,
         tag: "none"
       },
@@ -74,7 +74,7 @@ if (!productos) {
         genero: "Switches Red · Anti-ghosting",
         precioTexto: "$280.000 COP",
         precioValor: 280000,
-        imagen: "images/rgbmecanico.jpg",
+        imagen: "images/tecladorgb.jpg",
         stock: 10,
         tag: "none"
       },
@@ -84,7 +84,7 @@ if (!productos) {
         genero: "25K DPI · Ergonómico · RGB",
         precioTexto: "$320.000 COP",
         precioValor: 320000,
-        imagen: "/images/mouseg502.jpg",
+        imagen: "/images/mouse-gamer.png",
         stock: 15,
         tag: "none"
       },
@@ -94,7 +94,7 @@ if (!productos) {
         genero: "Audio Espacial · Mic Shure · PC/Consola",
         precioTexto: "$450.000 COP",
         precioValor: 450000,
-        imagen: "/images/audifonohyperx.jpg",
+        imagen: "/images/auriculares.png",
         stock: 10,
         tag: "none"
       }
@@ -116,7 +116,7 @@ if (!productos) {
         genero: "RPG · Acción · FromSoftware",
         precioTexto: "$349.900 COP",
         precioValor: 349900,
-        imagen: "/images/eldenringps5.jpg",
+        imagen: "/images/elden-ring-ps5-fisico.png",
         stock: 12,
         tag: "new"
       },
@@ -126,7 +126,7 @@ if (!productos) {
         genero: "Mundo Abierto · Acción · Rockstar Games",
         precioTexto: "$399.900 COP",
         precioValor: 399900,
-        imagen: "/images/gta6.jpg",
+        imagen: "/images/gtavi.jpg",
         stock: 50,
         tag: "pre" 
       }
@@ -148,7 +148,7 @@ if (!productos) {
         genero: "Shooter · Sci-Fi · 343 Industries",
         precioTexto: "$180.000 COP",
         precioValor: 180000,
-        imagen:"/images/haloxbox.jpg" ,
+        imagen:"/images/HaloPS5.png" ,
         stock: 3, 
         tag: "none"
       },
@@ -158,7 +158,7 @@ if (!productos) {
         genero: "RPG · Fantasía · Playground Games",
         precioTexto: "$299.900 COP",
         precioValor: 299000,
-        imagen: "/images/fable.jpg",
+        imagen: "/images/fableanni.png",
         stock: 15,
         tag: "pre"
       }
