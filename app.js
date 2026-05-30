@@ -306,3 +306,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+window.cambiarFormulario = function(vistaDestino) {
+    const vistas = ['login-view', 'forgot-view', 'register-view'];
+
+    vistas.forEach(id => {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            if (id === vistaDestino) {
+                elemento.style.display = 'block'; // Muestra la vista seleccionada
+            } else {
+                elemento.style.display = 'none';  // Oculta las demás
+            }
+        }
+    });
+};
+

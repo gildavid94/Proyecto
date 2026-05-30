@@ -345,28 +345,73 @@
       </div>
     </div>
 
-    <div id="login-modal" class="modal-hidden">
-        <div class="admin-card" style="max-width: 400px; margin: 100px auto; position: relative;">
-            <button type="button" onclick="cerrarModalLogin()" class="close-x" style="position: absolute; top: 15px; right: 15px;">×</button>
-            
-            <h3 class="slide-title" style="color: var(--accent); margin-bottom: 25px; text-align: center;">Acceso Gamer</h3>
-            
+    <div id="form-login-view">
+<div id="login-modal" class="modal-hidden">
+    <div class="admin-card" style="max-width: 400px; margin: 100px auto; position: relative; padding: 30px;">
+        <button type="button" onclick="cerrarModalLogin()" class="close-x" style="position: absolute; top: 15px; right: 15px;">×</button>
+        
+        <div id="login-view">
+            <h3 class="slide-title" style="color:#000000; margin-bottom: 25px; text-align: center;">Acceso Gamer</h3>
             <form id="login-form">
                 <div class="input-group" style="margin-bottom: 15px;">
                     <label>Usuario o Email</label>
-                    <input type="text" id="login-user" class="admin-input" placeholder="admin" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
+                    <input type="text" id="login-user" class="admin-input" placeholder="usuario" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
                 </div>
-                
                 <div class="input-group" style="margin-bottom: 20px;">
                     <label>Contraseña</label>
                     <input type="password" id="login-pass" class="admin-input" placeholder="••••••••" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
                 </div>
-                
                 <button type="submit" class="buy-btn" style="width: 100%;">
-                    <i class="fas fa-sign-in-alt"></i> Ingresar </button>
+                    <i class="fas fa-sign-in-alt"></i> Ingresar
+                </button>
             </form>
+            <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color:#000000; font-size: 15px;">
+                <a href="#" onclick="cambiarFormulario('forgot-view'); return false;" style="color: #000000;">¿Olvidaste tu contraseña?</a>
+                <p style="margin-top: 10px; color: #000000;">¿No tienes cuenta? <a href="#" onclick="cambiarFormulario('register-view'); return false;"><strong>Regístrate aquí</strong></a></p>
+            </div>
         </div>
+
+        <div id="forgot-view" style="display: none;">
+            <h3 class="slide-title" style="color:#000000; margin-bottom: 25px; text-align: center;">Recuperar Cuenta</h3>
+            <form id="forgot-form">
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="correo@dominio.com" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
+                </div>
+                <button type="submit" class="buy-btn" style="width: 100%; margin-bottom: 15px; font-size: 15px;">Enviar Enlace</button>
+            </form>
+            <div style="text-align: center; font-size: 15px;">
+                <a href="#" onclick="cambiarFormulario('login-view'); return false;" style="color: #000000; text-decoration: underline;">Volver al Login</a>
+            </div>
+        </div>
+
+        <div id="register-view" style="display: none;">
+            <h3 class="slide-title" style="color:#000000; margin-bottom: 25px; text-align: center;">Registro Gamer</h3>
+            <form id="register-form">
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Tu nombre" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
+                </div>
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="correo@dominio.com" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
+                </div>
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="••••••••" required style="width: 100%; padding: 10px; background: #000; border: 1px solid var(--border); color: #fff;">
+                </div>
+                <button type="submit" class="buy-btn" style="width: 100%; margin-bottom: 15px;">Registrarse</button>
+            </form>
+            <div style="text-align: center; font-size: 15px;">
+                <p style="color: #000000;">¿Ya tienes cuenta? <a href="#" onclick="cambiarFormulario('login-view'); return false;" style="color:#000000" ><Strong>Inicia sesión</Strong></a></p>
+            </div>
+        </div>
+
     </div>
+</div>
+
+    </div>
+</div>
 
     <footer class="ft">
     <div class="ft-top">
