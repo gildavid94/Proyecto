@@ -13,8 +13,8 @@
 :root {
   --accent: #045671;
   --accent-dim: #533497;
-  --bg-page: #1e1c1c;
-  --bg-card: #111118;
+  --bg-page: #98799d;
+  --bg-card: #000000;
   --bg-card-hover: #16161f;
   --border: #1f1f2e;
   --border-hover: #2e2e42;
@@ -66,18 +66,18 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 0.8rem; gap: 0.5rem;
   height: 64px;
-  gap: 1rem;
+  gap: 0.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.logo-img { height: 150px; width: auto; object-fit: contain; }
+.logo-img { height: 100px; width: auto; object-fit: contain; }
 .logo-text {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 1000;
   color:var(--text-primary);
   letter-spacing: 0.10em;
@@ -90,19 +90,20 @@ a { text-decoration: none; color: inherit; }
 }
 .logo-section{
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 19px;
+  color:#000000;
 
 
 }
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav-btn {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  padding: 7px 13px;
+  padding: 6px 8px;
   border-radius: var(--radius-sm);
   transition: color 0.15s, background 0.15s;
 }
@@ -118,7 +119,7 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   color: #bbb;
   border: 1px solid #2a2a3a;
-  padding: 7px 16px;
+  padding: 6px 10px;
   border-radius: var(--radius-sm);
   transition: border-color 0.15s, color 0.15s;
 }
@@ -152,7 +153,7 @@ a { text-decoration: none; color: inherit; }
 .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
 .game-slide { min-width: 100%; box-sizing: border-box; }
 .slide-inner { display: flex; flex-direction: column; background: var(--bg-card); }
-.slide-image-wrap { position: relative; height: 340px; background: #05050f; overflow: hidden; }
+.slide-image-wrap { position: relative; height: 220px; background: #05050f; overflow: hidden; }
 .slide-image-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88; transition: 0.6s ease; }
 .slide-image-wrap:hover img { transform: scale(1.03); opacity: 1; }
 .console-badge {
@@ -161,18 +162,18 @@ a { text-decoration: none; color: inherit; }
   border-radius: 20px; padding: 5px 12px;
   font-family: var(--font-display); font-size: 10px; color: #ccc;
 }
-.slide-body { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
-.slide-title { font-family: var(--font-display); font-size: 18px; color: var(--text-primary); }
+.slide-body { padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+.slide-title { font-family: var(--font-display); font-size: 23px; color: var(--text-primary); }
 .slide-meta {
-  font-size: 13px;
+  font-size: 18px;
   color: var(--text-secondary);
   margin-top: 4px;
 }
-.slide-price { font-family: var(--font-display); font-size: 20px; color: var(--text-primary
+.slide-price { font-size: 23px; color: var(--text-primary
   ); }
 .buy-btn {
   background: var(--accent); color: #ffffff; border: none;
-  font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  font-family: var(--font-display); font-size: 18px; font-weight: 600;
   padding: 10px 24px; border-radius: var(--radius-sm); cursor: pointer;
   transition: 0.15s; text-transform: uppercase;
 }
@@ -258,8 +259,8 @@ a { text-decoration: none; color: inherit; }
 
 
 .section-title {
-  font-family: var(--font-display); font-size: 13px;
-  font-weight: 600; color: var(--text-secondary);
+  font-family: var(--font-display); font-size: 22px;
+  font-weight: 600; color: #000000;
   letter-spacing: 0.08em; text-transform: uppercase;
 }
 
@@ -295,11 +296,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .product-name {
-  font-family: var(--font-display); font-size: 15px;
+  font-family: var(--font-display); font-size: 20px;
   font-weight: 600; color: var(--text-primary);
 }
 
-.product-genre { font-size: 12px; color: var(--text-secondary);}
+.product-genre { font-size: 15px; color: var(--text-secondary);}
 
 
     /* ══════════════════════════════════════════
@@ -352,7 +353,7 @@ a { text-decoration: none; color: inherit; }
 
 /*Modal Carrito de Compras*/
 
-.modal-hidden { display: none !important; }
+.modal-hidden { display: none; }
 
 #checkout-modal {
     position: fixed;
@@ -374,7 +375,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .modal-content {
-  background: var(--bg-card);
+  background: #98799d;
   padding: 30px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--accent);
@@ -382,7 +383,7 @@ a { text-decoration: none; color: inherit; }
   max-height: 90vh;
 }
 
-.input-group { margin-bottom: 15px;display: block !important; }
+.input-group { margin-bottom: 15px;display: block !important;color:#000000; }
 
 .input-group input {
   width: 100%;
@@ -431,7 +432,7 @@ a { text-decoration: none; color: inherit; }
 .close-btn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #888;
+    color: #000000;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
@@ -618,7 +619,7 @@ a { text-decoration: none; color: inherit; }
 
 .tag-text {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.15em;
@@ -629,13 +630,20 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 52px);
   font-weight: 900;
-  color: #fff;
   line-height: 1.15;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
+  color:#000000
 }
 
-.headline span { color: var(--accent); }
+.headline span { color:var(--text-primary);
+  letter-spacing: 0.10em;
+  white-space: nowrap;
+  background: linear-gradient(45deg, var(--text-primary), var(--accent), var(--accent-dim));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(4, 86, 113, 0.15); }
 
 .headline-sub {
   font-family: var(--font-display);
@@ -656,9 +664,10 @@ a { text-decoration: none; color: inherit; }
 .body-text {
   font-size: 16px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
+  color: #000000;
   line-height: 1.9;
   max-width: 700px;
+  font-family: var(--font-display);
 }
 
 .body-text strong { color: #fff; font-weight: 500; }
@@ -711,7 +720,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Ajustes a la tarjeta interna para remover estilos en línea pesados */
 #login-modal .admin-card {
-    background: #111116; 
+    background: #98799d; 
     border: 1px solid var(--accent); 
     box-shadow: 0 0 25px rgba(4, 86, 113, 0.3); 
     border-radius: var(--radius-lg);
@@ -885,17 +894,7 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(-3px); /* Pequeño brinco hacia arriba */
 }
 
-/* --- RESPONSIVE / DISEÑO MÓVIL --- */
-@media (max-width: 768px) {
-  .ft {
-    padding: 40px 20px 20px 20px;
-  }
-  
-  .ft-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+
 
 /* Estilo del contenedor de contacto (oculto al inicio) */
 .contacto-desplegable {
@@ -1082,4 +1081,55 @@ a { text-decoration: none; color: inherit; }
   .dash-content {
     flex-direction: column;
   }
+}
+/* ── COMPLEMENTOS DEL MODAL (SIN IMPORTANT) ── */
+
+
+.modal-gamer-container {
+    max-width: 400px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.modal-gamer-title {
+    color: var(--brand-color, #fff); /* Toma el color neón según la consola activa */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.modal-links-footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.modal-links-footer a {
+    color: var(--brand-color, #fff);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.modal-links-footer a:hover {
+    text-decoration: underline;
+}
+
+.modal-links-footer p {
+    color: var(--text-secondary);
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+.modal-view-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0.8;
 }
